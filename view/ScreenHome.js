@@ -1,6 +1,13 @@
 import { ref, onMounted } from 'vue'
 
+import PartHeader from './PartHeader.js'
+import PartFooter from './PartFooter.js'
+
 export default {
+    components: {
+        PartHeader,
+        PartFooter
+    },
     setup() {
         onMounted(()=> {
 
@@ -21,19 +28,6 @@ export default {
         const ic_game_f = `../${themeName}/skin/ic-game-f.png`
         const ic_setting_n = `../${themeName}/skin/ic-setting-n.png`
         const ic_setting_f = `../${themeName}/skin/ic-setting-f.png`
-
-        const power_0 = encodeURIComponent(`../${themeName}/skin/power-0%-icon.png`)
-        const power_20 = encodeURIComponent(`../${themeName}/skin/power-20%-icon.png`)
-        const power_50 = encodeURIComponent(`../${themeName}/skin/power-50%-icon.png`)
-        const power_80 = encodeURIComponent(`../${themeName}/skin/power-80%-icon.png`)
-        const power_full = encodeURIComponent(`../${themeName}/skin/power-full-icon.png`)
-
-        const icon_wifi_signal_01 = `../${themeName}/skin/icon-wifi-signal-01.png`
-        const icon_wifi_signal_02 = `../${themeName}/skin/icon-wifi-signal-02.png`
-        const icon_wifi_signal_03 = `../${themeName}/skin/icon-wifi-signal-03.png`
-        const icon_wifi_signal_04 = `../${themeName}/skin/icon-wifi-signal-04.png`
-
-        const logo = `../${themeName}/skin/miyoo-topbar.png`
 
         const dot_n = `../${themeName}/skin/dot-n.png`
         const dot_a = `../${themeName}/skin/dot-a.png`
@@ -56,24 +50,11 @@ export default {
         }
 
         return {
-            logo,
             background: `../${themeName}/skin/background.png`,
-            bg_title: `../${themeName}/skin/bg-title.png`,
             tips_bar_bg: `../${themeName}/skin/tips-bar-bg.png`,
             btn_a: `../${themeName}/skin/icon-A-54.png`,
             btn_b: `../${themeName}/skin/icon-B-54.png`,
             line_h: `../${themeName}/skin/div-line-h.png`,
-
-            power_0,
-            power_20,
-            power_50,
-            power_80,
-            power_full,
-
-            icon_wifi_signal_01,
-            icon_wifi_signal_02,
-            icon_wifi_signal_03,
-            icon_wifi_signal_04,
 
             dot_n,
             dot_a,
@@ -86,14 +67,7 @@ export default {
     },
     template: `
         <div class="screen-home">
-            <div class="header">
-                <div class="icon-list">
-                    <div class="icon-list-item"> <img :src="icon_wifi_signal_03" alt="wifi"> </div>
-                    <div class="icon-list-item"> <img :src="power_80" alt="power"> </div>
-                </div>
-                <div class="logo"><img :src="logo" alt="logo"></div>
-                <img class="bg-title" :src="bg_title" alt="bg">
-            </div>
+            <PartHeader/>
             
             <img class="line-h" :src="line_h" alt="line-h"/>
             
@@ -117,19 +91,7 @@ export default {
                 </div>
             </div>
             
-            <div class="footer">
-                <img class="bg" :src="tips_bar_bg" alt="">
-                <div class="btn-list">
-                    <div class="btn-list-item">
-                        <img class="icon" :src="btn_a" alt="A">
-                        <div class="btn-title">SELECT</div>
-                    </div>
-                    <div class="btn-list-item">
-                        <img class="icon" :src="btn_b" alt="B">
-                        <div class="btn-title">BACK</div>
-                    </div>
-                </div>
-            </div>
+            <PartFooter/>
             
         </div>
 `

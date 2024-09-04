@@ -1,10 +1,12 @@
 import { ref, onMounted } from 'vue'
 import theme_list from "./CONST_THEME_LIST.js";
 import ScreenHome from "./ScreenHome.js";
+import ScreenApp from "./ScreenApp.js";
 
 export default {
     components: {
-        ScreenHome
+        ScreenHome,
+        ScreenApp
     },
     setup() {
         const themeList = ref([])
@@ -45,7 +47,8 @@ export default {
         </div>
         
         <div class="preview-container">
-            <ScreenHome/>
+<!--            <ScreenHome/>-->
+            <ScreenApp/>
         </div>
     </div>
     

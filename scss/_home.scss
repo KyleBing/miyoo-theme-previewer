@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   .preview-list{
-    padding-right: 660px;
+    padding-right: $width + 20px;
     flex-grow: 1;
   }
 
@@ -16,7 +16,7 @@
     top: 20px;
     background-color: black;
     padding: 10px;
-    width: 660px;
+    width: $width + 20px;
     flex-shrink: 0;
   }
 }

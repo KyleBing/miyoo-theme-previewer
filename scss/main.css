@@ -132,12 +132,13 @@ img {
   position: relative;
 }
 .screen-home img.line-h {
+  width: 640px;
   position: absolute;
   top: 60px;
   z-index: 10;
 }
 .screen-home img.background {
-  width: 100%;
+  width: 640px;
   position: absolute;
   top: 0;
   left: 0;
@@ -197,8 +198,8 @@ img {
   cursor: pointer;
 }
 .main-menu-list .main-menu-list-item .menu-title {
-  font-size: 18px;
-  color: white;
+  font-size: 26px;
+  color: gray;
   width: 156px;
   letter-spacing: 0.5px;
   position: absolute;
@@ -206,6 +207,7 @@ img {
   text-align: center;
 }
 .main-menu-list .main-menu-list-item.active .menu-title {
+  color: white;
   text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.3);
 }
 .main-menu-list::-webkit-scrollbar {
@@ -235,7 +237,7 @@ img {
   position: relative;
 }
 .header img.bg-title {
-  width: 100%;
+  width: 640px;
   position: absolute;
   top: 0;
   left: 0;
@@ -286,7 +288,7 @@ img {
 }
 .footer .btn-list .btn-list-item .btn-title {
   color: white;
-  font-size: 18px;
+  font-size: 26px;
   line-height: 54px;
 }
 

@@ -3,13 +3,14 @@
     height: $height;
     position: relative;
     img.line-h{
+        width: $width;
         position: absolute;
         top: $height-header;
         z-index: 10;
     }
 
     img.background{
-        width: 100%;
+        width: $width;
         position: absolute;
         top: 0;
         left: 0;
