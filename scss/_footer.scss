@@ -1,0 +1,33 @@
+@use "sass:math";
+.footer{
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    left: 0;
+    height: $height-footer;
+    img.bg{
+        display: block;
+    }
+
+    .btn-list{
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: flex-start;
+        .btn-list-item{
+            margin-right: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: ($height-footer - $height-footer-icon-btn)/2;
+            img.icon{
+            }
+            .btn-title{
+                color: white;
+                font-size: $fz-title;
+                line-height: $height-footer-icon-btn;
+            }
+        }
+    }
+}

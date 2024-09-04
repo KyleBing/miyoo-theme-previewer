@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preview</title>
+    <link rel="stylesheet" href="./scss/main.css">
+</head>
+<body>
+
+<script type="importmap">
+    {
+      "imports": {
+        "vue": "./js/vue.esm-browser.js"
+      }
+    }
+</script>
+
+<div id="app"></div>
+
+<script type="module">
+    import { createApp, ref } from 'vue'
+    import Home from "./view/Home.js";
+    import PreviewHome from "./view/ScreenHome.js";
+    // createApp(PreviewHome).mount('#app')
+    createApp(Home).mount('#app')
+</script>
+
+</body>
+</html>

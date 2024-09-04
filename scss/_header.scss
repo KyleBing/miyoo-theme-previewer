@@ -1,0 +1,37 @@
+@use "sass:math";
+.header{
+    height: $height-header;
+    z-index: 900;
+    position: relative;
+    img.bg-title{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .logo{
+        z-index: 10;
+        position: absolute;
+        left: 10px;
+        padding: ($height-header - $height-logo)/2;
+        img{
+            display: block;
+        }
+    }
+
+    .icon-list{
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        display: flex;
+        justify-content: flex-end;
+        .icon-list-item{
+            padding: ($height-header - $height-header-icon)/2;
+            img{
+
+            }
+        }
+    }
+}

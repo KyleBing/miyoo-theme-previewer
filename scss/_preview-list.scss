@@ -1,0 +1,36 @@
+.preview-list{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    .preview-list-item{
+        margin-bottom: 20px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column nowrap;
+        .preview-img-wrapper{
+            background-color: white;
+            @include box-shadow(1px 1px 5px transparentize(black, 0.8));
+            display: block;
+            width: 360px;
+            padding: 5px;
+            @include border-radius(5px);
+            overflow: hidden;
+            border: 1px solid $color-border;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        .preview-title{
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Galvji', sans-serif;
+            font-size: $fz-main;
+            font-weight: bold;
+        }
+    }
+}

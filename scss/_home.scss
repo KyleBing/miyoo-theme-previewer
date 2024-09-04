@@ -1,0 +1,23 @@
+.home{
+  background-color: gray;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  .preview-list{
+    padding-right: 660px;
+    flex-grow: 1;
+  }
+
+  .preview-container{
+    @include border-radius(10px);
+    @include box-shadow(10px 10px 25px transparentize(black, 0.3));
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background-color: black;
+    padding: 10px;
+    width: 660px;
+    flex-shrink: 0;
+  }
+}
+
