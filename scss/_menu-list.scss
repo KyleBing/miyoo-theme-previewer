@@ -1,0 +1,42 @@
+.menu-list{
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 10;
+  position: absolute;
+  top: $height-header;
+  width: $width;
+  height: $height - $height-header - $height-footer;
+  left: 0;
+  .menu-list-item{
+    cursor: pointer;
+    @extend .unselectable;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &.large{
+      height: $height-list-large;
+      .icon{
+        display: flex;
+        justify-content: center;
+        width: $height-list-large * 1.2;
+        img{
+
+        }
+      }
+      .title-wrapper{
+        .title{
+          font-size: $fz-title;
+          color: $text-title;
+        }
+        .subtitle{
+          font-size: $fz-subtitle;
+          color: $text-subtitle;
+        }
+      }
+    }
+    &.small{
+      height: $height-list-small;
+
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import { ref, onMounted } from 'vue'
 import theme_list from "./CONST_THEME_LIST.js";
 import ScreenHome from "./ScreenHome.js";
-import ScreenApp from "./ScreenApp.js";
+import ScreenAppList from "./ScreenAppList.js";
 
 export default {
     components: {
         ScreenHome,
-        ScreenApp
+        ScreenAppList
     },
     setup() {
         const themeList = ref([])
@@ -15,7 +15,6 @@ export default {
             // generate theme list data
             themeList.value =
                 theme_list.map(item => {
-                    let title, previewImgPath, author = ''
                     if (item.indexOf(' by ') > 0){
                         let temparray = item.split(' by ')
                         return {
@@ -33,7 +32,11 @@ export default {
                 })
         })
 
-        return { themeList }
+        return {
+            themeList,
+            themeName: 'Cosy by KyleBing',
+            // themeName : '2021 Stock by Miyoo'
+        }
     },
     template: `
     <div class="home">
@@ -48,7 +51,7 @@ export default {
         
         <div class="preview-container">
 <!--            <ScreenHome/>-->
-            <ScreenApp/>
+            <ScreenAppList :themeName="themeName"/>
         </div>
     </div>
     

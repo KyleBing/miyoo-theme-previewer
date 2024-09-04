@@ -11,15 +11,41 @@ $height-header-icon: 48px;
 $height-logo: 42px;
 $height-footer-icon-btn: 54px;
 
+$height-list-large: 90px;
+$height-list-small: 56px;
+
 img{
     display: block;
 }
 
+img.line-h{
+    bottom: 0;
+    width: $width;
+    position: absolute;
+    z-index: 10;
+}
+
+.screen{
+    position: relative;
+    width: $width;
+    height: $height;
+
+    img.background{
+        width: $width;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
 @import "home";
+@import "header";
+@import "footer";
+
 @import "screen_home";
 @import "preview-list";
 @import "main-menu";
-@import "header";
-@import "footer";
+
+@import "menu-list";
 
 

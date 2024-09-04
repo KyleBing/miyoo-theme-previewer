@@ -10,6 +10,19 @@
         left: 0;
     }
 
+    .title{
+        color: $text-title;
+        font-size: $fz-title;
+        line-height: $fz-title;
+        padding: ($height-header - $fz-title)/2;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        text-align: center;
+    }
+
     .logo{
         z-index: 10;
         position: absolute;

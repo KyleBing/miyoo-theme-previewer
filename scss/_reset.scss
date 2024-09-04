@@ -51,8 +51,8 @@ tt {
 
 ::-webkit-scrollbar {
     z-index: 50;
-    width: 10px;
-    height: 10px;
+    width: 0;
+    height: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -76,3 +76,4 @@ tt {
 ::-webkit-scrollbar-corner {
     display: none;
 }
+

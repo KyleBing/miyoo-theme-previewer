@@ -1,6 +1,10 @@
 import { ref, onMounted } from 'vue'
 
 export default {
+    props: {
+        isShowLogo: false,
+        title: ''
+    },
     setup() {
         onMounted(()=> {
 
@@ -27,6 +31,7 @@ export default {
             bg_title: `../${themeName}/skin/bg-title.png`,
             line_h: `../${themeName}/skin/div-line-h.png`,
 
+
             power_0,
             power_20,
             power_50,
@@ -45,8 +50,10 @@ export default {
         <div class="icon-list-item"> <img :src="icon_wifi_signal_03" alt="wifi"> </div>
         <div class="icon-list-item"> <img :src="power_80" alt="power"> </div>
     </div>
-    <div class="logo"><img :src="logo" alt="logo"></div>
+    <div class="title" v-if="title">{{title}}</div>
+    <div class="logo" v-if="isShowLogo"><img :src="logo" alt="logo"></div>
     <img class="bg-title" :src="bg_title" alt="bg">
+    <img class="line-h" :src="line_h" alt="line-h"/>
 </div>
 `
 }

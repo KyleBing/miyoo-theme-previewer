@@ -43,6 +43,9 @@ $radius-mobile: 7px;
 $radius-pc: 10px;
 
 // Font size
+$fz-title               : 26px;
+$fz-subtitle            : 20px;
+
 $fz-list-header         : 24px;
 $fz-list-header-mobile  : 22px;
 $fz-list-content        : 14.5px;
@@ -52,7 +55,7 @@ $fz-small               : 12px;
 $fz-tiny                : 10px;
 $fz-label               : 16px;
 $fz-main                : 14px;
-$fz-title               : 26px;
+
 $fz-big                 : 30px;
 $fz-header              : 24px;
 $fz-bankcard-header     : 24px;
@@ -60,10 +63,10 @@ $fz-huge                : 42px;
 $fz-menu                : 19px;
 
 // Color text
+$text-title:          #fff;
+$text-subtitle:       #999;
 $text-label:          #9B9B9B;
 $text-content:        #373737;
-$text-title:          #232323;
-$text-subtitle:       #666;
 $text-date:           #2d2d2d;
 $text-about-subtitle: #D1D5DA;
 $text-menu-second:    $text-about-subtitle;
