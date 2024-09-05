@@ -17,7 +17,23 @@ export default {
         MenuListItemLarge
     },
     setup(props) {
-        const appList = [
+
+        const appListOnion = [
+            {name: 'Package Manager' ,  desc: 'Add or remove systems and apps' , icon: `../${props.themeName}/icons/App/untitled.png`} ,
+            {name: 'LogoTweak' ,        desc: 'Change boot logo' ,               icon: `../${props.themeName}/icons/App/logotweak.png`} ,
+            {name: 'Search' ,           desc: 'Search game library' ,            icon: `../${props.themeName}/icons/App/search.png`} ,
+            {name: 'Activity Tracker' , desc: 'Track your play activity' ,       icon: `../${props.themeName}/icons/App/activity.png`} ,
+            {name: 'RetroArch' ,        desc: 'Advanced emulator settings' ,     icon: `../${props.themeName}/icons/App/retroarch.png`} ,
+            {name: 'Expert' ,           desc: 'Expert tab shortcut' ,            icon: `../${props.themeName}/icons/App/expert.png`} ,
+            {name: 'Themes' ,           desc: 'Change system theme' ,            icon: `../${props.themeName}/icons/App/themes.png`} ,
+            {name: 'Tweaks' ,           desc: 'System tweaks and tools' ,        icon: `../${props.themeName}/icons/App/tweaks.png`} ,
+            {name: 'Battery Monitor' ,  desc: 'Monitor your battery usage' ,     icon: `../${props.themeName}/icons/App/battery_monitor.png`} ,
+            {name: 'Guest Mode [OFF]' , desc: 'Activate the guest profile' ,     icon: `../${props.themeName}/icons/App/guest_off.png`} ,
+            {name: 'Guest Mode [ON]' ,  desc: 'Activate the guest profile' ,     icon: `../${props.themeName}/icons/App/guest_on.png`} ,
+            {name: 'Terminal' ,         desc: 'st - Simple Terminal' ,           icon: `../${props.themeName}/icons/App/terminal.png`} ,
+        ]
+
+        const appListSpruce = [
             {name: 'SYNCTHING',                  desc: 'Synchronize your files',                            icon: `../${props.themeName}/icons/App/syncthing.png`},
             {name: 'BOOT LOGO',                  desc: 'Swap the Boot Logo at Start Up',                    icon: `../${props.themeName}/icons/App/bootlogo.png`},
             {name: 'ICON FRESH',                 desc: 'Apply Icons From the Current Theme',                icon: `../${props.themeName}/icons/App/iconfresh.png`},
@@ -48,7 +64,7 @@ export default {
         return {
             background: `../${props.themeName}/skin/background.png`,
             line_h: `../${props.themeName}/skin/div-line-h.png`,
-            appList,
+            appList: appListOnion.concat(appListSpruce),
             currentApp,
             currentAppIndex,
             listItemClicked,
@@ -58,7 +74,6 @@ export default {
     template: `
         <div class="screen screen-app-list">
             <PartHeader title="Apps" :themeName="props.themeName"/>
-            <img class="line-h" :src="line_h" alt="line-h"/>
             <img class="background" :src="background" alt="bg"/>
             
             <div class="menu-list">

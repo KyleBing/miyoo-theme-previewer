@@ -1,0 +1,21 @@
+.screen-switcher{
+  margin-top: 20px;
+  padding: 10px;
+  @include border-radius($radius-pc);
+  @include box-shadow(10px 10px 25px transparentize(black, 0.3));
+  background-color: black;
+}
+
+.screen-list{
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  .screen-list-item{
+    @extend .btn-like;
+    width: 50%;
+    line-height: 1.5;
+    text-align: center;
+    color: $text-title;
+    font-size: $fz-subtitle;
+  }
+}

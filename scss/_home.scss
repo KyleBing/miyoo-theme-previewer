@@ -9,15 +9,18 @@
   }
 
   .preview-container{
-    @include border-radius(10px);
-    @include box-shadow(10px 10px 25px transparentize(black, 0.3));
     position: fixed;
     right: 20px;
     top: 20px;
+    width: $width + 20px;
+  }
+
+  .screen-wrapper{
+    flex-shrink: 0;
+    @include border-radius($radius-pc);
+    @include box-shadow(10px 10px 25px transparentize(black, 0.3));
     background-color: black;
     padding: 10px;
-    width: $width + 20px;
-    flex-shrink: 0;
   }
 }
 

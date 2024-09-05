@@ -18,18 +18,18 @@ export default {
     },
     setup(props) {
         const settingList = [
-            {name: 'Shutdown',            icon: `../${props.themeName}/skin/icon-Shutdown.png`,          desc: ''},
-            {name: 'Brightness',          icon: `../${props.themeName}/skin/icon-brightness-48.png`,     desc: ''},
-            {name: 'WIFI',                icon: `../${props.themeName}/skin/icon-setting-wifi.png`,      desc: ''},
-            {name: 'Display',             icon: `../${props.themeName}/skin/color.png`,                  desc: ''},
-            {name: 'Change language',     icon: `../${props.themeName}/skin/icon-language-48.png`,       desc: ''},
-            {name: 'Menu sound',          icon: `../${props.themeName}/skin/sound-icon.png`,             desc: ''},
-            {name: 'Themes',              icon: `../${props.themeName}/skin/icon-theme.png`,             desc: ''},
-            {name: 'Joystick calibration',icon: `../${props.themeName}/skin/icon-joystick-calibrate.png`,desc: ''},
-            {name: 'Joystick',            icon: `../${props.themeName}/skin/icon-joystick-test.png`,     desc: ''},
-            {name: 'Keymap',              icon: `../${props.themeName}/skin/icon-key-setting-48 2.png`,  desc: ''},
-            {name: 'Factory reset',       icon: `../${props.themeName}/skin/icon-factory-reset-48.png`,  desc: ''},
-            {name: 'Device info',         icon: `../${props.themeName}/skin/icon-device-info-48.png`,    desc: ''},
+            {name: 'Shutdown',             isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-Shutdown.png`,          },
+            {name: 'Brightness',           isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-brightness-48.png`,     },
+            {name: 'WIFI',                 isShowSwitch: true,   isSwitchOn: true, icon: `../${props.themeName}/skin/icon-setting-wifi.png`,      },
+            {name: 'Display',              isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/color.png`,                  },
+            {name: 'Change language',      isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-language-48.png`,       },
+            {name: 'Menu sound',           isShowSwitch: true,   isSwitchOn: false, icon: `../${props.themeName}/skin/sound-icon.png`,             },
+            {name: 'Themes',               isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-theme.png`,             },
+            {name: 'Joystick calibration', isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-joystick-calibrate.png`,},
+            {name: 'Joystick',             isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-joystick-test.png`,     },
+            {name: 'Keymap',               isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-key-setting-48 2.png`,  },
+            {name: 'Factory reset',        isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-factory-reset-48.png`,  },
+            {name: 'Device info',          isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-device-info-48.png`,    },
 
         ]
 
@@ -55,7 +55,6 @@ export default {
     template: `
         <div class="screen screen-app-list">
             <PartHeader title="Settings" :themeName="props.themeName"/>
-            <img class="line-h" :src="line_h" alt="line-h"/>
             <img class="background" :src="background" alt="bg"/>
             
             <div class="menu-list">
@@ -64,6 +63,8 @@ export default {
                     v-for="(item, index) in settingList" :key="item.name"
                     :icon="item.icon"
                     :title="item.name"
+                    :isSwitchOn="item.isSwitchOn"
+                    :isShowSwitch="item.isShowSwitch"
                     :subtitle="item.desc"
                     :isSelected="currentAppIndex === index"
                 />

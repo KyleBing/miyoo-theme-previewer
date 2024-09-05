@@ -76,18 +76,18 @@ tt {
   display: none;
 }
 
-.unselectable, .game-console-list .game-console-list-item, .menu-list .menu-list-item-small, .menu-list .menu-list-item-large, .main-menu-list .main-menu-list-item img, .btn-like {
+.unselectable, .game-console-list .game-console-list-item, .menu-list .menu-list-item-small, .menu-list .menu-list-item-large, .main-menu-list .main-menu-list-item img, .btn-like, .screen-list .screen-list-item {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.btn-like {
+.btn-like, .screen-list .screen-list-item {
   white-space: nowrap;
   cursor: pointer;
 }
-.btn-like:active {
+.btn-like:active, .screen-list .screen-list-item:active {
   transform: translateY(2px);
 }
 
@@ -125,19 +125,21 @@ img.line-h {
   flex-grow: 1;
 }
 .home .preview-container {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 660px;
+}
+.home .screen-wrapper {
+  flex-shrink: 0;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   -webkit-box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7);
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7);
-  position: fixed;
-  right: 20px;
-  top: 20px;
   background-color: black;
   padding: 10px;
-  width: 660px;
-  flex-shrink: 0;
 }
 
 .header {
@@ -383,20 +385,17 @@ img.line-h {
   left: 0;
   top: 0;
 }
-.menu-list .menu-list-item-small .title-wrapper {
+.menu-list .menu-list-item-small .content {
+  align-items: center;
+  flex-grow: 1;
   z-index: 10;
   display: flex;
   justify-content: space-between;
 }
-.menu-list .menu-list-item-small .title-wrapper .title {
+.menu-list .menu-list-item-small .content .title {
   font-size: 26px;
   color: #fff;
 }
-.menu-list .menu-list-item-small .title-wrapper .subtitle {
-  font-size: 20px;
-  color: #999;
-}
-
 .game-console-list-wrapper {
   width: 640px;
   height: 360px;
@@ -481,6 +480,31 @@ img.line-h {
   text-align: center;
   color: #fff;
   font-size: 26px;
+}
+
+.screen-switcher {
+  margin-top: 20px;
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7);
+  background-color: black;
+}
+
+.screen-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+}
+.screen-list .screen-list-item {
+  width: 50%;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

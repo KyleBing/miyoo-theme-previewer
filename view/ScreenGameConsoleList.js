@@ -18,28 +18,28 @@ export default {
     },
     setup(props) {
         const appList = [
-            { name: 'SEARCH',  desc: '', icon : `../${props.themeName}/icons/search.png`} ,
-            { name: '32X',     desc: '', icon : `../${props.themeName}/icons/32X.png`}    ,
-            { name: '7800',    desc: '', icon : `../${props.themeName}/icons/7800.png`}   ,
-            { name: 'FC',      desc: '', icon : `../${props.themeName}/icons/fc.png`}     ,
-            { name: 'FDS',     desc: '', icon : `../${props.themeName}/icons/fds.png`}    ,
-            { name: 'GB',      desc: '', icon : `../${props.themeName}/icons/gb.png`}     ,
-            { name: 'GBA',     desc: '', icon : `../${props.themeName}/icons/gba.png`}    ,
-            { name: 'GBC',     desc: '', icon : `../${props.themeName}/icons/gbc.png`}    ,
-            { name: 'GW',      desc: '', icon : `../${props.themeName}/icons/gw.png`}     ,
-            { name: 'MD',      desc: '', icon : `../${props.themeName}/icons/md.png`}     ,
-            { name: 'N64',     desc: '', icon : `../${props.themeName}/icons/n64.png`}    ,
-            { name: 'PICO',    desc: '', icon : `../${props.themeName}/icons/pico.png`}   ,
-            { name: 'POKE',    desc: '', icon : `../${props.themeName}/icons/poke.png`}   ,
-            { name: 'PORTS',   desc: '', icon : `../${props.themeName}/icons/ports.png`}  ,
-            { name: 'PS',      desc: '', icon : `../${props.themeName}/icons/ps.png`}     ,
-            { name: 'SATELLA', desc: '', icon : `../${props.themeName}/icons/satella.png`},
-            { name: 'SEGACD',  desc: '', icon : `../${props.themeName}/icons/segacd.png`} ,
-            { name: 'SFC',     desc: '', icon : `../${props.themeName}/icons/sfc.png`}    ,
-            { name: 'SGB',     desc: '', icon : `../${props.themeName}/icons/sgb.png`}    ,
-            { name: 'SUFAMI',  desc: '', icon : `../${props.themeName}/icons/sufami.png`} ,
-            { name: 'TIC',     desc: '', icon : `../${props.themeName}/icons/tic.png`}    ,
-            { name: 'WS',      desc: '', icon : `../${props.themeName}/icons/ws.png`}     ,
+            { name: 'SEARCH',  icon : `../${props.themeName}/icons/search.png`, iconSelected : `../${props.themeName}/icons/sel/search.png`} ,
+            { name: '32X',     icon : `../${props.themeName}/icons/32X.png`, iconSelected : `../${props.themeName}/icons/sel/32X.png`}    ,
+            { name: '7800',    icon : `../${props.themeName}/icons/7800.png`, iconSelected : `../${props.themeName}/icons/sel/7800.png`}   ,
+            { name: 'FC',      icon : `../${props.themeName}/icons/fc.png`, iconSelected : `../${props.themeName}/icons/sel/fc.png`}     ,
+            { name: 'FDS',     icon : `../${props.themeName}/icons/fds.png`, iconSelected : `../${props.themeName}/icons/sel/fds.png`}    ,
+            { name: 'GB',      icon : `../${props.themeName}/icons/gb.png`, iconSelected : `../${props.themeName}/icons/sel/gb.png`}     ,
+            { name: 'GBA',     icon : `../${props.themeName}/icons/gba.png`, iconSelected : `../${props.themeName}/icons/sel/gba.png`}    ,
+            { name: 'GBC',     icon : `../${props.themeName}/icons/gbc.png`, iconSelected : `../${props.themeName}/icons/sel/gbc.png`}    ,
+            { name: 'GW',      icon : `../${props.themeName}/icons/gw.png`, iconSelected : `../${props.themeName}/icons/sel/gw.png`}     ,
+            { name: 'MD',      icon : `../${props.themeName}/icons/md.png`, iconSelected : `../${props.themeName}/icons/sel/md.png`}     ,
+            { name: 'N64',     icon : `../${props.themeName}/icons/n64.png`, iconSelected : `../${props.themeName}/icons/sel/n64.png`}    ,
+            { name: 'PICO',    icon : `../${props.themeName}/icons/pico.png`, iconSelected : `../${props.themeName}/icons/sel/pico.png`}   ,
+            { name: 'POKE',    icon : `../${props.themeName}/icons/poke.png`, iconSelected : `../${props.themeName}/icons/sel/poke.png`}   ,
+            { name: 'PORTS',   icon : `../${props.themeName}/icons/ports.png`, iconSelected : `../${props.themeName}/icons/sel/ports.png`}  ,
+            { name: 'PS',      icon : `../${props.themeName}/icons/ps.png`, iconSelected : `../${props.themeName}/icons/sel/ps.png`}     ,
+            { name: 'SATELLA', icon : `../${props.themeName}/icons/satella.png`, iconSelected : `../${props.themeName}/icons/sel/satella.png`},
+            { name: 'SEGACD',  icon : `../${props.themeName}/icons/segacd.png`, iconSelected : `../${props.themeName}/icons/sel/segacd.png`} ,
+            { name: 'SFC',     icon : `../${props.themeName}/icons/sfc.png`, iconSelected : `../${props.themeName}/icons/sel/sfc.png`}    ,
+            { name: 'SGB',     icon : `../${props.themeName}/icons/sgb.png`, iconSelected : `../${props.themeName}/icons/sel/sgb.png`}    ,
+            { name: 'SUFAMI',  icon : `../${props.themeName}/icons/sufami.png`, iconSelected : `../${props.themeName}/icons/sel/sufami.png`} ,
+            { name: 'TIC',     icon : `../${props.themeName}/icons/tic.png`, iconSelected : `../${props.themeName}/icons/sel/tic.png`}    ,
+            { name: 'WS',      icon : `../${props.themeName}/icons/ws.png`, iconSelected : `../${props.themeName}/icons/sel/ws.png`}     ,
         ]
 
         // mark current list item
@@ -64,7 +64,6 @@ export default {
     template: `
         <div class="screen screen-game-console-list">
             <PartHeader title="Consoles" :themeName="props.themeName"/>
-            <img class="line-h" :src="line_h" alt="line-h"/>
             <img class="background" :src="background" alt="bg"/>
             
             <div class="game-console-list-wrapper">
@@ -74,6 +73,7 @@ export default {
                         @click="listItemClicked(item.name, index)"
                         v-for="(item, index) in appList" :key="item.name"
                         :icon="item.icon"
+                        :iconSelected="item.iconSelected"
                         :title="item.name"
                         :isSelected="currentAppIndex === index"
                     />

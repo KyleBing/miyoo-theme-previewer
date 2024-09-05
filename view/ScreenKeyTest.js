@@ -29,7 +29,6 @@ export default {
         <div class="screen screen-keymap">
             <PartHeader title="Key test" :themeName="props.themeName"/>
             
-            <img class="line-h" :src="line_h" alt="line-h"/>
             <img class="background" :src="background" alt="bg"/>
             <img class="keymap" :src="keytest" alt="keymap"/>
             
