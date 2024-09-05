@@ -1,5 +1,3 @@
-import { onMounted } from 'vue'
-
 export default {
     props: {
         batteryLevel: { // 1-5
@@ -28,10 +26,6 @@ export default {
         }
     },
     setup(props) {
-        onMounted(()=> {
-
-        })
-
         const power_0 = encodeURIComponent(`../${props.themeName}/skin/power-0%-icon.png`)
         const power_20 = encodeURIComponent(`../${props.themeName}/skin/power-20%-icon.png`)
         const power_50 = encodeURIComponent(`../${props.themeName}/skin/power-50%-icon.png`)
@@ -81,9 +75,9 @@ export default {
     template: `
 <div class="header">
     <div class="icon-list">
-        <div class="icon-list-item"> <img :src="volumeArray[props.volumeLevel]" alt="wifi"> </div>
+        <div class="icon-list-item"> <img :src="volumeArray[props.volumeLevel]" alt="volume"> </div>
         <div class="icon-list-item"> <img :src="wifiArray[props.wifiLevel]" alt="wifi"> </div>
-        <div class="icon-list-item"> <img :src="batteryArray[props.batteryLevel]" alt="power"> </div>
+        <div class="icon-list-item"> <img :src="batteryArray[props.batteryLevel]" alt="battery"> </div>
     </div>
     <div class="title" v-if="title">{{title}}</div>
     <div class="logo" v-if="isShowLogo"><img :src="logo" alt="logo"></div>

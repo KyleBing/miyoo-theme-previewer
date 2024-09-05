@@ -58,9 +58,9 @@ export default {
         </div>
         
         <div class="preview-container">
-<!--            <ScreenHome :themeName="themeName"/>-->
+            <ScreenHome :themeName="themeName"/>
 <!--            <ScreenAppList :themeName="themeName"/>-->
-            <ScreenSettingList :themeName="themeName"/>
+<!--            <ScreenSettingList :themeName="themeName"/>-->
 <!--            <ScreenGameConsoleList :themeName="themeName"/>-->
 <!--            <ScreenKeyMap :themeName="themeName"/>-->
 <!--            <ScreenKeyTest :themeName="themeName"/>-->

@@ -5,7 +5,12 @@ import PartFooter from './components/PartFooter.js'
 import GameConsoleItem from './components/GameConsoleItem.js'
 
 export default {
-
+    props: {
+        themeName: { // THEME NAME
+            type: String,
+            default: 'Cosy by KyleBing'
+        },
+    },
     components: {
         PartHeader,
         PartFooter,
@@ -65,6 +70,7 @@ export default {
             <div class="game-console-list-wrapper">
                 <div class="game-console-list">
                     <GameConsoleItem
+                        :themeName="props.themeName"
                         @click="listItemClicked(item.name, index)"
                         v-for="(item, index) in appList" :key="item.name"
                         :icon="item.icon"

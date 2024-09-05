@@ -17,7 +17,7 @@ export default {
     template: `
 <div :class="['game-console-list-item', {active: isSelected}]">
     <div class="icon">
-        <img :src="icon" :alt="icon">
+        <img :src="icon" alt="console icon">
     </div>
     <div class="title">{{title}}</div>
     <img v-show="isSelected" :src="bg_game_item_f" alt="bg-selected" class="bg">
