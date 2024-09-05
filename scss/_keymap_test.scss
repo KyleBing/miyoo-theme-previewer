@@ -1,0 +1,39 @@
+.screen-keymap{
+    position: relative;
+
+    img.keymap{
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $width;
+        height: $height;
+    }
+
+    .keymap-key{
+        z-index: 999;
+        position: absolute;
+        width: 160px;
+        height: 60px;
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .key-name{
+            line-height: 60px;
+            z-index: 99;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            text-align: center;
+            color: $text-title;
+            font-size: $fz-title;
+        }
+    }
+
+}

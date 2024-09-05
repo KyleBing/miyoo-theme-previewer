@@ -4,13 +4,17 @@ import ScreenHome from "./ScreenHome.js";
 import ScreenAppList from "./ScreenAppList.js";
 import ScreenSettingList from "./ScreenSettingList.js";
 import ScreenGameConsoleList from "./ScreenGameConsoleList.js";
+import ScreenKeyMap from "./ScreenKeyMap.js";
+import ScreenKeyTest from "./ScreenKeyTest.js";
 
 export default {
     components: {
         ScreenHome,
         ScreenAppList,
         ScreenSettingList,
-        ScreenGameConsoleList
+        ScreenGameConsoleList,
+        ScreenKeyMap,
+        ScreenKeyTest
     },
     setup() {
         const themeList = ref([])
@@ -57,7 +61,9 @@ export default {
 <!--            <ScreenHome/>-->
 <!--            <ScreenAppList :themeName="themeName"/>-->
 <!--            <ScreenSettingList :themeName="themeName"/>-->
-            <ScreenGameConsoleList :themeName="themeName"/>
+<!--            <ScreenGameConsoleList :themeName="themeName"/>-->
+<!--            <ScreenKeyMap :themeName="themeName"/>-->
+            <ScreenKeyTest :themeName="themeName"/>
         </div>
     </div>
     

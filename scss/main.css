@@ -91,11 +91,6 @@ tt {
   transform: translateY(2px);
 }
 
-@media (max-width: 768px) {
-  .hide-in-mobile {
-    display: none;
-  }
-}
 img {
   display: block;
 }
@@ -255,7 +250,7 @@ img.line-h {
   margin-top: 20px;
   text-align: center;
   font-family: "Galvji", sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
 }
 .preview-list::-webkit-scrollbar {
@@ -451,6 +446,43 @@ img.line-h {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.screen-keymap {
+  position: relative;
+}
+.screen-keymap img.keymap {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 480px;
+}
+.screen-keymap .keymap-key {
+  z-index: 999;
+  position: absolute;
+  width: 160px;
+  height: 60px;
+}
+.screen-keymap .keymap-key img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.screen-keymap .keymap-key .key-name {
+  line-height: 60px;
+  z-index: 99;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
 }
 
 /*# sourceMappingURL=main.css.map */

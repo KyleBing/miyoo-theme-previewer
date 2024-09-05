@@ -3,22 +3,6 @@
 @import "utility";
 
 
-$width: 640px;
-$height: 480px;
-$height-header: 60px;
-$height-footer: 60px;
-$height-header-icon: 48px;
-$height-logo: 42px;
-$height-footer-icon-btn: 54px;
-
-$height-list-large: 90px;
-$height-list-small: 56px;
-
-$height-icon-setting: 48px;
-
-$height-list-game-console: 170px;
-$width-list-game-console: 155px;
-
 img{
     display: block;
 }
@@ -52,5 +36,6 @@ img.line-h{
 @import "main-menu";
 @import "menu-list";
 @import "game-console-list";
+@import "keymap_test";
 
 
