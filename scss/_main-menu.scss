@@ -7,6 +7,9 @@
     display: flex;
     justify-content: flex-start;
     .main-menu-list-item{
+        flex-shrink: 0;
+        width: 156px;
+        height: 278px;
         cursor: pointer;
         .menu-title{
             font-size: $fz-title;
@@ -17,9 +20,18 @@
             top: 190px;
             text-align: center;
         }
-        img{
-            @extend .unselectable;
+        .img-wrapper{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                flex-grow: 0;
+                @extend .unselectable;
+            }
         }
+
         &.active{
             .menu-title{
                 color: white;

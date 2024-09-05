@@ -57,6 +57,7 @@ export default {
             themeList,
             model: 'a30',  // mini a30
             themeName: 'Cosy by KyleBing',
+            // themeName: 'SPRUCE',
             screenList,
             currentScreen,
 
@@ -76,12 +77,12 @@ export default {
         
         <div class="preview-container">
             <div class="screen-wrapper">
-                <component :is="currentScreen"/>
+                <component :is="currentScreen" :themeName="themeName"/>
             </div>
             
             <div class="screen-switcher">
                 <div class="screen-list">
-                    <div class="screen-list-item" 
+                    <div :class="['screen-list-item', {active: item === currentScreen}]" 
                         @click="switchToScreen(item)"
                         v-for="(item, index) in screenList" :key="index">{{item}}</div>
                 </div>

@@ -27,7 +27,7 @@ export default {
             {name: 'Themes',               isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-theme.png`,             },
             {name: 'Joystick calibration', isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-joystick-calibrate.png`,},
             {name: 'Joystick',             isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-joystick-test.png`,     },
-            {name: 'Keymap',               isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-key-setting-48 2.png`,  },
+            {name: 'Keymap',               isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-key-setting-48.png`,  },
             {name: 'Factory reset',        isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-factory-reset-48.png`,  },
             {name: 'Device info',          isShowSwitch: false,  isSwitchOn: false, icon: `../${props.themeName}/skin/icon-device-info-48.png`,    },
 
@@ -63,6 +63,7 @@ export default {
                     v-for="(item, index) in settingList" :key="item.name"
                     :icon="item.icon"
                     :title="item.name"
+                    :themeName="themeName"
                     :isSwitchOn="item.isSwitchOn"
                     :isShowSwitch="item.isShowSwitch"
                     :subtitle="item.desc"

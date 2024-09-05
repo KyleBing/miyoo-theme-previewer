@@ -80,8 +80,10 @@ export default {
                     v-for="(item, menuIndex) in mainMenuList" :key="menuIndex"
                 >
                     <div class="menu-title">{{item.name}}</div>
-                    <img v-show="currentMenu === item.name" :src="item.f" :alt="item.name">
-                    <img v-show="currentMenu !== item.name" :src="item.n" :alt="item.name">
+                    <div class="img-wrapper">
+                        <img v-show="currentMenu === item.name" :src="item.f" :alt="item.name">
+                        <img v-show="currentMenu !== item.name" :src="item.n" :alt="item.name">
+                    </div>
                 </div>
             </div>
             

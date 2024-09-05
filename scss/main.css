@@ -76,7 +76,7 @@ tt {
   display: none;
 }
 
-.unselectable, .game-console-list .game-console-list-item, .menu-list .menu-list-item-small, .menu-list .menu-list-item-large, .main-menu-list .main-menu-list-item img, .btn-like, .screen-list .screen-list-item {
+.unselectable, .game-console-list .game-console-list-item, .menu-list .menu-list-item-small, .menu-list .menu-list-item-large, .main-menu-list .main-menu-list-item .img-wrapper img, .btn-like, .screen-list .screen-list-item {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -209,6 +209,9 @@ img.line-h {
   align-items: center;
   padding: 3px;
 }
+.footer .btn-list .btn-list-item img.icon {
+  width: 48px;
+}
 .footer .btn-list .btn-list-item .btn-title {
   color: white;
   font-size: 26px;
@@ -288,6 +291,9 @@ img.line-h {
   justify-content: flex-start;
 }
 .main-menu-list .main-menu-list-item {
+  flex-shrink: 0;
+  width: 156px;
+  height: 278px;
   cursor: pointer;
 }
 .main-menu-list .main-menu-list-item .menu-title {
@@ -298,6 +304,16 @@ img.line-h {
   position: absolute;
   top: 190px;
   text-align: center;
+}
+.main-menu-list .main-menu-list-item .img-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-menu-list .main-menu-list-item .img-wrapper img {
+  flex-grow: 0;
 }
 .main-menu-list .main-menu-list-item.active .menu-title {
   color: white;
@@ -503,8 +519,12 @@ img.line-h {
   width: 50%;
   line-height: 1.5;
   text-align: center;
-  color: #fff;
+  color: #999;
   font-size: 20px;
+}
+.screen-list .screen-list-item.active {
+  color: white;
+  text-shadow: 1px 1px 2px #666666;
 }
 
 /*# sourceMappingURL=main.css.map */
