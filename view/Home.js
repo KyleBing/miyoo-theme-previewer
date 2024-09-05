@@ -42,8 +42,8 @@ export default {
 
         return {
             themeList,
-            themeName: 'Cosy by KyleBing',
-            // themeName : '2021 Stock by Miyoo'
+            // themeName: 'Cosy by KyleBing',
+            themeName : '2021 Stock by Miyoo'
         }
     },
     template: `
@@ -58,12 +58,12 @@ export default {
         </div>
         
         <div class="preview-container">
-<!--            <ScreenHome/>-->
+<!--            <ScreenHome :themeName="themeName"/>-->
 <!--            <ScreenAppList :themeName="themeName"/>-->
-<!--            <ScreenSettingList :themeName="themeName"/>-->
+            <ScreenSettingList :themeName="themeName"/>
 <!--            <ScreenGameConsoleList :themeName="themeName"/>-->
 <!--            <ScreenKeyMap :themeName="themeName"/>-->
-            <ScreenKeyTest :themeName="themeName"/>
+<!--            <ScreenKeyTest :themeName="themeName"/>-->
         </div>
     </div>
     

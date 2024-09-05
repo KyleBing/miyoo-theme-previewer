@@ -1,54 +1,89 @@
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 
 export default {
     props: {
-        isShowLogo: false,
-        title: ''
+        batteryLevel: { // 1-5
+            type: Number,
+            default: 3
+        },
+        wifiLevel: { // 1-4
+            type: Number,
+            default: 3
+        },
+        volumeLevel: { // 0-20
+            type: Number,
+            default: 3
+        },
+        themeName: { // THEME NAME
+            type: String,
+            default: 'Cosy by KyleBing'
+        },
+        isShowLogo: {  // logo
+            type: Boolean,
+            default: false
+        },
+        title: {  // title
+            type: String,
+            default: ''
+        }
     },
-    setup() {
+    setup(props) {
         onMounted(()=> {
 
         })
 
-        const themeName = 'Cosy by KyleBing'
-        // const themeName = '2021 Stock by Miyoo'
+        const power_0 = encodeURIComponent(`../${props.themeName}/skin/power-0%-icon.png`)
+        const power_20 = encodeURIComponent(`../${props.themeName}/skin/power-20%-icon.png`)
+        const power_50 = encodeURIComponent(`../${props.themeName}/skin/power-50%-icon.png`)
+        const power_80 = encodeURIComponent(`../${props.themeName}/skin/power-80%-icon.png`)
+        const power_full = encodeURIComponent(`../${props.themeName}/skin/power-full-icon.png`)
 
-        const power_0 = encodeURIComponent(`../${themeName}/skin/power-0%-icon.png`)
-        const power_20 = encodeURIComponent(`../${themeName}/skin/power-20%-icon.png`)
-        const power_50 = encodeURIComponent(`../${themeName}/skin/power-50%-icon.png`)
-        const power_80 = encodeURIComponent(`../${themeName}/skin/power-80%-icon.png`)
-        const power_full = encodeURIComponent(`../${themeName}/skin/power-full-icon.png`)
+        const icon_wifi_signal_01 = `../${props.themeName}/skin/icon-wifi-signal-01.png`
+        const icon_wifi_signal_02 = `../${props.themeName}/skin/icon-wifi-signal-02.png`
+        const icon_wifi_signal_03 = `../${props.themeName}/skin/icon-wifi-signal-03.png`
+        const icon_wifi_signal_04 = `../${props.themeName}/skin/icon-wifi-signal-04.png`
 
-        const icon_wifi_signal_01 = `../${themeName}/skin/icon-wifi-signal-01.png`
-        const icon_wifi_signal_02 = `../${themeName}/skin/icon-wifi-signal-02.png`
-        const icon_wifi_signal_03 = `../${themeName}/skin/icon-wifi-signal-03.png`
-        const icon_wifi_signal_04 = `../${themeName}/skin/icon-wifi-signal-04.png`
+        // generate 0-20 volume icon array
+        const volumeArray = []
+        for(let i=0;i<=20;i++){
+            let index = String(i).padStart(2, '00')
+            volumeArray.push(`../${props.themeName}/skin/icon-volume-${index}.png`)
+        }
 
-        const logo = `../${themeName}/skin/miyoo-topbar.png`
+        const logo = `../${props.themeName}/skin/miyoo-topbar.png`
+
+        console.log(props)
 
         return {
             logo,
-            bg_title: `../${themeName}/skin/bg-title.png`,
-            line_h: `../${themeName}/skin/div-line-h.png`,
+            bg_title: `../${props.themeName}/skin/bg-title.png`,
+            line_h: `../${props.themeName}/skin/div-line-h.png`,
 
+            batteryArray: [
+                power_0,
+                power_20,
+                power_50,
+                power_80,
+                power_full,
+            ],
 
-            power_0,
-            power_20,
-            power_50,
-            power_80,
-            power_full,
+            wifiArray: [
+                icon_wifi_signal_01,
+                icon_wifi_signal_02,
+                icon_wifi_signal_03,
+                icon_wifi_signal_04,
+            ],
 
-            icon_wifi_signal_01,
-            icon_wifi_signal_02,
-            icon_wifi_signal_03,
-            icon_wifi_signal_04,
+            volumeArray,
+            props
         }
     },
     template: `
 <div class="header">
     <div class="icon-list">
-        <div class="icon-list-item"> <img :src="icon_wifi_signal_03" alt="wifi"> </div>
-        <div class="icon-list-item"> <img :src="power_80" alt="power"> </div>
+        <div class="icon-list-item"> <img :src="volumeArray[props.volumeLevel]" alt="wifi"> </div>
+        <div class="icon-list-item"> <img :src="wifiArray[props.wifiLevel]" alt="wifi"> </div>
+        <div class="icon-list-item"> <img :src="batteryArray[props.batteryLevel]" alt="power"> </div>
     </div>
     <div class="title" v-if="title">{{title}}</div>
     <div class="logo" v-if="isShowLogo"><img :src="logo" alt="logo"></div>

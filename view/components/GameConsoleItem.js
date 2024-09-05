@@ -1,21 +1,17 @@
-import {onMounted } from 'vue'
-
 export default {
     props: {
-        themeName: '',
+        themeName: { // THEME NAME
+            type: String,
+            default: 'Cosy by KyleBing'
+        },
         icon: '',
         title: '',
         isSelected: false,
     },
-    setup() {
-        onMounted(()=> {
-
-        })
-        const themeName = 'Cosy by KyleBing'
-
+    setup(props) {
         return {
-            bg_game_item_f: `../${themeName}/skin/bg-game-item-f.png`,
-            bg_game_item_n: `../${themeName}/skin/bg-game-item-n.png`,
+            bg_game_item_f: `../${props.themeName}/skin/bg-game-item-f.png`,
+            bg_game_item_n: `../${props.themeName}/skin/bg-game-item-n.png`,
         }
     },
     template: `

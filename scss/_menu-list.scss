@@ -54,7 +54,7 @@
       display: flex;
       justify-content: center;
       padding: ($height-list-small - $height-icon-setting) / 2;
-      margin-top: -2px;
+
       width: $height-list-small * 1.3;
       align-items: center;
       img{
@@ -68,7 +68,7 @@
       top: 0;
     }
     .title-wrapper{
-      margin-top: -2px;
+
       z-index: 10;
       display: flex;
       justify-content: space-between;

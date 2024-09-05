@@ -1,14 +1,13 @@
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 export default {
-    setup() {
-        onMounted(()=> {
-
-        })
-
-        const themeName = 'Cosy by KyleBing'
-        // const themeName = '2021 Stock by Miyoo'
-
+    props: {
+        themeName: { // THEME NAME
+            type: String,
+            default: 'Cosy by KyleBing'
+        },
+    },
+    setup(props) {
         const currentMenu = ref('Recent')
         const currentMenuIndex = ref(0)
 
@@ -18,10 +17,10 @@ export default {
         }
 
         return {
-            tips_bar_bg: `../${themeName}/skin/tips-bar-bg.png`,
-            btn_a: `../${themeName}/skin/icon-A-54.png`,
-            btn_b: `../${themeName}/skin/icon-B-54.png`,
-            line_h: `../${themeName}/skin/div-line-h.png`,
+            tips_bar_bg: `../${props.themeName}/skin/tips-bar-bg.png`,
+            btn_a: `../${props.themeName}/skin/icon-A-54.png`,
+            btn_b: `../${props.themeName}/skin/icon-B-54.png`,
+            line_h: `../${props.themeName}/skin/div-line-h.png`,
         }
     },
     template: `

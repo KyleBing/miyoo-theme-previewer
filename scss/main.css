@@ -96,7 +96,7 @@ img {
 }
 
 img.line-h {
-  bottom: 0;
+  bottom: -2px;
   width: 640px;
   position: absolute;
   z-index: 10;
@@ -374,7 +374,6 @@ img.line-h {
   display: flex;
   justify-content: center;
   padding: 4px;
-  margin-top: -2px;
   width: 72.8px;
   align-items: center;
 }
@@ -385,7 +384,6 @@ img.line-h {
   top: 0;
 }
 .menu-list .menu-list-item-small .title-wrapper {
-  margin-top: -2px;
   z-index: 10;
   display: flex;
   justify-content: space-between;
