@@ -76,7 +76,7 @@ tt {
   display: none;
 }
 
-.unselectable, .menu-list .menu-list-item-small, .menu-list .menu-list-item-large, .main-menu-list .main-menu-list-item img, .btn-like {
+.unselectable, .game-console-list .game-console-list-item, .menu-list .menu-list-item-small, .menu-list .menu-list-item-large, .main-menu-list .main-menu-list-item img, .btn-like {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -402,6 +402,55 @@ img.line-h {
 .menu-list .menu-list-item-small .title-wrapper .subtitle {
   font-size: 20px;
   color: #999;
+}
+
+.game-console-list-wrapper {
+  width: 640px;
+  height: 360px;
+  overflow-y: auto;
+  left: 0;
+  position: absolute;
+}
+
+.game-console-list {
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  top: 60px;
+  width: 640px;
+  padding: 10px;
+}
+.game-console-list .game-console-list-item {
+  width: 155px;
+  z-index: 10;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 170px;
+}
+.game-console-list .game-console-list-item.active .title {
+  color: #fff;
+}
+.game-console-list .game-console-list-item .icon {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+.game-console-list .game-console-list-item .title {
+  bottom: 20px;
+  position: absolute;
+  z-index: 10;
+  font-size: 26px;
+  color: #999;
+}
+.game-console-list .game-console-list-item img.bg {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

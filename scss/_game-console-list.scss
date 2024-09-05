@@ -1,0 +1,55 @@
+.game-console-list-wrapper{
+  width: $width;
+  height: $height - $height-header - $height-footer;
+  overflow-y: auto;
+  left: 0;
+  position: absolute;
+}
+.game-console-list{
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  top: $height-header;
+  width: $width;
+  padding: ($width - 4 * $width-list-game-console) / 2;
+
+  .game-console-list-item{
+    width: $width-list-game-console;
+    z-index: 10;
+    cursor: pointer;
+    @extend .unselectable;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: $height-list-game-console;
+    &.active{
+      .title {
+        color: $text-title;
+      }
+    }
+    .icon{
+      position: absolute;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      img{
+
+      }
+    }
+    .title{
+      bottom: 20px;
+      position: absolute;
+      z-index: 10;
+      font-size: $fz-title;
+      color: $text-subtitle;
+    }
+    img.bg{
+      z-index: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+  }
+}

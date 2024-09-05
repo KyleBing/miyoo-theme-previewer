@@ -3,12 +3,14 @@ import theme_list from "./CONST_THEME_LIST.js";
 import ScreenHome from "./ScreenHome.js";
 import ScreenAppList from "./ScreenAppList.js";
 import ScreenSettingList from "./ScreenSettingList.js";
+import ScreenGameConsoleList from "./ScreenGameConsoleList.js";
 
 export default {
     components: {
         ScreenHome,
         ScreenAppList,
-        ScreenSettingList
+        ScreenSettingList,
+        ScreenGameConsoleList
     },
     setup() {
         const themeList = ref([])
@@ -54,7 +56,8 @@ export default {
         <div class="preview-container">
 <!--            <ScreenHome/>-->
 <!--            <ScreenAppList :themeName="themeName"/>-->
-            <ScreenSettingList :themeName="themeName"/>
+<!--            <ScreenSettingList :themeName="themeName"/>-->
+            <ScreenGameConsoleList :themeName="themeName"/>
         </div>
     </div>
     

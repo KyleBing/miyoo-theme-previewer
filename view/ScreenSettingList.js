@@ -20,18 +20,19 @@ export default {
         // const themeName = '2021 Stock by Miyoo'
 
         const settingList = [
-            {name: 'Shutdown',                  icon: `../${themeName}/skin/icon-Shutdown.png`,          desc: ''                      },
-            {name: 'Brightness',                icon: `../${themeName}/skin/icon-brightness-48.png`,     desc: ''              },
-            {name: 'WIFI',                      icon: `../${themeName}/skin/icon-setting-wifi.png`,      desc: ''          },
-            {name: 'Display',                   icon: `../${themeName}/skin/color.png`,                  desc: ''                  },
-            {name: 'Change language',           icon: `../${themeName}/skin/icon-language-48.png`,       desc: ''         },
-            {name: 'Menu sound',                icon: `../${themeName}/skin/sound-icon.png`,             desc: ''             },
-            {name: 'Joystick calibration',      icon: `../${themeName}/skin/icon-joystick-calibrate.png`,desc: ''          },
-            {name: 'Joystick',                  icon: `../${themeName}/skin/icon-joystick-test.png`,     desc: ''                          },
-            {name: 'Keymap',                    icon: `../${themeName}/skin/icon-key-setting-48 2.png`,  desc: ''                     },
-            {name: 'Factory reset',             icon: `../${themeName}/skin/icon-factory-reset-48.png`,  desc: ''                         },
-            {name: 'Device info',               icon: `../${themeName}/skin/icon-device-info-48.png`,    desc: ''     },
-            {name: 'Themes',                    icon: `../${themeName}/skin/icon-theme.png`,             desc: ''                 },
+            {name: 'Shutdown',            icon: `../${themeName}/skin/icon-Shutdown.png`,          desc: ''},
+            {name: 'Brightness',          icon: `../${themeName}/skin/icon-brightness-48.png`,     desc: ''},
+            {name: 'WIFI',                icon: `../${themeName}/skin/icon-setting-wifi.png`,      desc: ''},
+            {name: 'Display',             icon: `../${themeName}/skin/color.png`,                  desc: ''},
+            {name: 'Change language',     icon: `../${themeName}/skin/icon-language-48.png`,       desc: ''},
+            {name: 'Menu sound',          icon: `../${themeName}/skin/sound-icon.png`,             desc: ''},
+            {name: 'Themes',              icon: `../${themeName}/skin/icon-theme.png`,             desc: ''},
+            {name: 'Joystick calibration',icon: `../${themeName}/skin/icon-joystick-calibrate.png`,desc: ''},
+            {name: 'Joystick',            icon: `../${themeName}/skin/icon-joystick-test.png`,     desc: ''},
+            {name: 'Keymap',              icon: `../${themeName}/skin/icon-key-setting-48 2.png`,  desc: ''},
+            {name: 'Factory reset',       icon: `../${themeName}/skin/icon-factory-reset-48.png`,  desc: ''},
+            {name: 'Device info',         icon: `../${themeName}/skin/icon-device-info-48.png`,    desc: ''},
+
         ]
 
         // mark current list item

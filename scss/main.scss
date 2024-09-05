@@ -16,6 +16,9 @@ $height-list-small: 56px;
 
 $height-icon-setting: 48px;
 
+$height-list-game-console: 170px;
+$width-list-game-console: 155px;
+
 img{
     display: block;
 }
@@ -47,7 +50,7 @@ img.line-h{
 @import "screen_home";
 @import "preview-list";
 @import "main-menu";
-
 @import "menu-list";
+@import "game-console-list";
 
 
