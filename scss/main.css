@@ -76,7 +76,7 @@ tt {
   display: none;
 }
 
-.unselectable, .menu-list .menu-list-item, .main-menu-list .main-menu-list-item img, .btn-like {
+.unselectable, .menu-list .menu-list-item-small, .menu-list .menu-list-item-large, .main-menu-list .main-menu-list-item img, .btn-like {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -337,30 +337,71 @@ img.line-h {
   height: 360px;
   left: 0;
 }
-.menu-list .menu-list-item {
+.menu-list .menu-list-item-large {
   cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
-}
-.menu-list .menu-list-item.large {
   height: 90px;
 }
-.menu-list .menu-list-item.large .icon {
+.menu-list .menu-list-item-large .icon {
+  z-index: 10;
   display: flex;
   justify-content: center;
   width: 108px;
 }
-.menu-list .menu-list-item.large .title-wrapper .title {
+.menu-list .menu-list-item-large img.bg-selected {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.menu-list .menu-list-item-large .title-wrapper {
+  z-index: 10;
+}
+.menu-list .menu-list-item-large .title-wrapper .title {
   font-size: 26px;
   color: #fff;
 }
-.menu-list .menu-list-item.large .title-wrapper .subtitle {
+.menu-list .menu-list-item-large .title-wrapper .subtitle {
   font-size: 20px;
   color: #999;
 }
-.menu-list .menu-list-item.small {
+.menu-list .menu-list-item-small {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
   height: 56px;
+}
+.menu-list .menu-list-item-small .icon {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  margin-top: -2px;
+  width: 72.8px;
+  align-items: center;
+}
+.menu-list .menu-list-item-small img.bg-selected {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.menu-list .menu-list-item-small .title-wrapper {
+  margin-top: -2px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+}
+.menu-list .menu-list-item-small .title-wrapper .title {
+  font-size: 26px;
+  color: #fff;
+}
+.menu-list .menu-list-item-small .title-wrapper .subtitle {
+  font-size: 20px;
+  color: #999;
 }
 
 /*# sourceMappingURL=main.css.map */

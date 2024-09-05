@@ -7,36 +7,79 @@
   width: $width;
   height: $height - $height-header - $height-footer;
   left: 0;
-  .menu-list-item{
+  .menu-list-item-large{
     cursor: pointer;
     @extend .unselectable;
     position: relative;
     display: flex;
     align-items: center;
-    &.large{
-      height: $height-list-large;
-      .icon{
-        display: flex;
-        justify-content: center;
-        width: $height-list-large * 1.2;
-        img{
+    height: $height-list-large;
+    .icon{
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      width: $height-list-large * 1.2;
+      img{
 
-        }
-      }
-      .title-wrapper{
-        .title{
-          font-size: $fz-title;
-          color: $text-title;
-        }
-        .subtitle{
-          font-size: $fz-subtitle;
-          color: $text-subtitle;
-        }
       }
     }
-    &.small{
-      height: $height-list-small;
+    img.bg-selected{
+      z-index: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .title-wrapper{
+      z-index: 10;
+      .title{
+        font-size: $fz-title;
+        color: $text-title;
+      }
+      .subtitle{
+        font-size: $fz-subtitle;
+        color: $text-subtitle;
+      }
+    }
+  }
 
+  .menu-list-item-small{
+    cursor: pointer;
+    @extend .unselectable;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $height-list-small;
+    .icon{
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      padding: ($height-list-small - $height-icon-setting) / 2;
+      margin-top: -2px;
+      width: $height-list-small * 1.3;
+      align-items: center;
+      img{
+
+      }
+    }
+    img.bg-selected{
+      z-index: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .title-wrapper{
+      margin-top: -2px;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      .title{
+        font-size: $fz-title;
+        color: $text-title;
+      }
+      .subtitle{
+        font-size: $fz-subtitle;
+        color: $text-subtitle;
+      }
     }
   }
 }
