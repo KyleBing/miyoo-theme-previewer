@@ -14,13 +14,23 @@ export default {
         ScreenSettingList,
         ScreenGameConsoleList,
         ScreenKeyMap,
-        ScreenKeyTest
+        ScreenKeyTest,
     },
     setup() {
 
         /**
          * THEME CHANGE
          */
+        const currentThemeName = ref('Cosy by KyleBing')
+        // const currentThemeName = ref('SPRUCE')
+        function changeTheme(theme){
+            currentThemeName.value = theme.originFolderName
+            currentScreen.value = 'ScreenAppList'
+            nextTick(()=>{
+                currentScreen.value = 'ScreenHome'
+            })
+        }
+
         const themeList = ref([])
         onMounted(()=> {
             // generate theme list data
@@ -43,15 +53,17 @@ export default {
                 }
             })
         })
-        // const currentThemeName = ref('Cosy by KyleBing')
-        const currentThemeName = ref('Super Mariyoo by tenlevels')
-        function changeTheme(theme){
-            currentThemeName.value = theme.originFolderName
-            currentScreen.value = 'ScreenAppList'
-            nextTick(()=>{
-                currentScreen.value = 'ScreenHome'
-            })
+
+
+        /**
+         * SCREEN CHANGE
+         */
+        const currentScreen = ref('ScreenHome')
+        function switchToScreen(screenName){
+            currentScreen.value = screenName
         }
+        const isShowMainMenuTitle = ref(false) // show title
+        const isShowFooterTitle = ref(false) // show title
 
         /**
          * SCREEN CHANGE
@@ -64,33 +76,27 @@ export default {
             'ScreenKeyMap',
             'ScreenKeyTest',
         ]
-        const currentScreen = ref('ScreenHome')
-        function switchToScreen(screenName){
-            currentScreen.value = screenName
-        }
 
-        const isShowTitle = ref(false) // show title
-        const isShowFooterTitle = ref(false) // show title
 
         return {
             themeList,
+            screenList,
             model: 'a30',  // mini a30
             currentThemeName,
 
-            screenList,
             currentScreen,
 
             // Methods
             changeTheme,
             switchToScreen,
 
-            isShowTitle,
+            isShowMainMenuTitle,
             isShowFooterTitle
         }
     },
     template: `
     <div class="home">
-        <div class="preview-list">
+<!--        <div class="preview-list">
             <div class="preview-list-item"
                     @click="changeTheme(item)"
                     v-for="(item, index) in themeList" :key="index">
@@ -99,22 +105,39 @@ export default {
                 </div>
                 <div class="preview-title">{{item.title}}</div>
             </div>
-        </div>
+        </div>-->
         
         <div class="preview-container">
             <div class="screen-wrapper">
                 <component :is="currentScreen" 
                     :themeName="currentThemeName" 
-                    :isShowTitle="isShowTitle"
+                    :isShowTitle="isShowMainMenuTitle"
                     :isShowFooterTitle="isShowFooterTitle"
                 />
             </div>
             
-            <div class="screen-switcher">
-                <div class="screen-list">
-                    <div :class="['screen-list-item', {active: item === currentScreen}]" 
-                        @click="switchToScreen(item)"
-                        v-for="(item, index) in screenList" :key="index">{{item}}</div>
+            <div class="control-panel">
+                <div class="form-container">
+                    <div class="form-item">
+                        <label for="showMainMenuTitle">
+                            <input id="showMainMenuTitle" type="checkbox" v-model="isShowMainMenuTitle"/>
+                            Main Menu Title
+                        </label>
+                    </div>
+                    <div class="form-item">
+                        <label for="showFooterTitle">
+                            <input id="showFooterTitle" type="checkbox" v-model="isShowFooterTitle"/>
+                            Footer Title
+                        </label>
+                    </div>
+                </div>
+            
+                <div class="screen-switcher">
+                    <div class="screen-list">
+                        <div :class="['screen-list-item', {active: item === currentScreen}]" 
+                            @click="switchToScreen(item)"
+                            v-for="(item, index) in screenList" :key="index">{{item}}</div>
+                    </div>
                 </div>
             </div>
         </div>

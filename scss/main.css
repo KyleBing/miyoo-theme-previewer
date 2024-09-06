@@ -23,11 +23,6 @@ table {
   border-collapse: collapse;
 }
 
-input,
-textarea {
-  -webkit-appearance: none !important;
-}
-
 code,
 kbd,
 pre,
@@ -76,18 +71,18 @@ tt {
   display: none;
 }
 
-.unselectable, .game-console-list .game-console-list-item, .menu-list .menu-list-item-small, .menu-list .menu-list-item-large, .main-menu-list .main-menu-list-item .img-wrapper img, .btn-like, .screen-list .screen-list-item, .preview-list .preview-list-item {
+.unselectable, .game-console-list .game-console-list-item, .menu-list .menu-list-item-small, .menu-list .menu-list-item-large, .main-menu-list .main-menu-list-item .img-wrapper img, .main-menu-list .main-menu-list-item, .btn-like, .screen-switcher .screen-list .screen-list-item, .form-container .form-item, .preview-list .preview-list-item {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.btn-like, .screen-list .screen-list-item, .preview-list .preview-list-item {
+.btn-like, .screen-switcher .screen-list .screen-list-item, .form-container .form-item, .preview-list .preview-list-item {
   white-space: nowrap;
   cursor: pointer;
 }
-.btn-like:active, .screen-list .screen-list-item:active, .preview-list .preview-list-item:active {
+.btn-like:active, .screen-switcher .screen-list .screen-list-item:active, .form-container .form-item:active, .preview-list .preview-list-item:active {
   transform: translateY(2px);
 }
 
@@ -500,7 +495,7 @@ img.line-h {
   font-size: 26px;
 }
 
-.screen-switcher {
+.control-panel {
   margin-top: 20px;
   padding: 10px;
   -webkit-border-radius: 10px;
@@ -512,19 +507,32 @@ img.line-h {
   background-color: black;
 }
 
-.screen-list {
+.form-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.form-container .form-item {
+  margin-right: 20px;
+  color: white;
+}
+
+.screen-switcher .screen-list {
+  padding: 10px;
   display: flex;
   justify-content: flex-start;
   flex-flow: row wrap;
 }
-.screen-list .screen-list-item {
+.screen-switcher .screen-list .screen-list-item {
   width: 50%;
   line-height: 1.5;
   text-align: center;
   color: #999;
   font-size: 20px;
 }
-.screen-list .screen-list-item.active {
+.screen-switcher .screen-list .screen-list-item.active {
   color: white;
   text-shadow: 1px 1px 2px #666666;
 }
