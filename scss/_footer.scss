@@ -2,7 +2,7 @@
 .footer{
     position: absolute;
     bottom: 0;
-    z-index: 10;
+    z-index: $z-index-footer;
     left: 0;
     height: $height-footer;
     img.bg{

@@ -43,7 +43,8 @@ export default {
                 }
             })
         })
-        const currentThemeName = ref('Cosy by KyleBing')
+        // const currentThemeName = ref('Cosy by KyleBing')
+        const currentThemeName = ref('Super Mariyoo by tenlevels')
         function changeTheme(theme){
             currentThemeName.value = theme.originFolderName
             currentScreen.value = 'ScreenAppList'

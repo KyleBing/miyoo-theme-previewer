@@ -3,7 +3,7 @@
     overflow-x: auto;
     top: 85px;
     position: absolute;
-    z-index: 100;
+    z-index: $z-index-menu;
     display: flex;
     justify-content: flex-start;
     .main-menu-list-item{
@@ -47,8 +47,8 @@
 }
 
 .main-menu-indicator-list{
+    z-index: $z-index-menu-indicator;
     position: absolute;
-    z-index: 10;
     width: 100%;
     bottom: 80px;
     display: flex;

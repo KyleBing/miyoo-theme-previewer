@@ -145,11 +145,12 @@ img.line-h {
 
 .header {
   height: 60px;
-  z-index: 900;
+  z-index: 100;
   position: relative;
 }
 .header img.bg-title {
   width: 640px;
+  max-height: 480px;
   position: absolute;
   top: 0;
   left: 0;
@@ -189,7 +190,7 @@ img.line-h {
 .footer {
   position: absolute;
   bottom: 0;
-  z-index: 10;
+  z-index: 100;
   left: 0;
   height: 60px;
 }
@@ -287,7 +288,7 @@ img.line-h {
   overflow-x: auto;
   top: 85px;
   position: absolute;
-  z-index: 100;
+  z-index: 200;
   display: flex;
   justify-content: flex-start;
 }
@@ -327,8 +328,8 @@ img.line-h {
 }
 
 .main-menu-indicator-list {
+  z-index: 100;
   position: absolute;
-  z-index: 10;
   width: 100%;
   bottom: 80px;
   display: flex;

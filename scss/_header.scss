@@ -1,10 +1,11 @@
 @use "sass:math";
 .header{
     height: $height-header;
-    z-index: 900;
+    z-index: $z-index-header;
     position: relative;
     img.bg-title{
         width: $width;
+        max-height: $height;
         position: absolute;
         top: 0;
         left: 0;
