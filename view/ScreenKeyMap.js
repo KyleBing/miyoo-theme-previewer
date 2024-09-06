@@ -1,6 +1,7 @@
 import PartHeader from './components/PartHeader.js'
 import PartFooter from './components/PartFooter.js'
 import MenuListItemSmall from './components/MenuListItemSmall.js'
+import {onImgError} from "./util.js";
 
 export default {
     props: {
@@ -29,18 +30,19 @@ export default {
             keymap: `../${props.themeName}/skin/bg-keysetting.png`,
             keytest: `../${props.themeName}/skin/bg-io-testing.png`,
             keymap_key_bg: `../${props.themeName}/skin/bg-keysetting-f.png`,
+            onImgError
         }
     },
     template: `
         <div class="screen screen-keymap">
-            <PartHeader title="Keymap" :themeName="themeName"/>
+            <PartHeader title="Key Setting" :themeName="themeName"/>
             
             <img class="background" :src="background" alt="bg"/>
             <img class="keymap" :src="keymap" alt="keymap"/>
             
             <div class="keymap-key" style="left:0; top:65px">
                 <div class="key-name">L</div>
-                <img :src="keymap_key_bg" alt="keymap-key-bg"/>
+                <img :src="keymap_key_bg" alt="keymap-key-bg" @error="onImgError"/>
              </div>
             
             <PartFooter :isShowFooterTitle="isShowFooterTitle" :themeName="themeName"/>

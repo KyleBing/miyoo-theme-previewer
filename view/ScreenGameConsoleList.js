@@ -60,7 +60,7 @@ export default {
     },
     template: `
         <div class="screen screen-game-console-list">
-            <PartHeader title="Consoles" :themeName="themeName"/>
+            <PartHeader title="Games" :themeName="themeName"/>
             <img class="background" :src="background" alt="bg"/>
             
             <div class="game-console-list-wrapper">

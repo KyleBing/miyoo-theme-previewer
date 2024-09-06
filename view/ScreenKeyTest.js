@@ -26,7 +26,7 @@ export default {
     },
     template: `
         <div class="screen screen-keymap">
-            <PartHeader title="Key test" :themeName="themeName"/>
+            <PartHeader title="IO Test" :themeName="themeName"/>
             
             <img class="background" :src="background" alt="bg"/>
             <img class="keymap" :src="keytest" alt="keymap"/>
