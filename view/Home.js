@@ -62,8 +62,9 @@ export default {
         function switchToScreen(screenName){
             currentScreen.value = screenName
         }
-        const isShowMainMenuTitle = ref(false) // show title
-        const isShowFooterTitle = ref(false) // show title
+        const isShowMainMenuTitle = ref(true) // show title
+        const isShowFooterTitle = ref(true) // show title
+        const isShowConsoleTitle = ref(true) // show console title
 
         /**
          * SCREEN CHANGE
@@ -91,12 +92,13 @@ export default {
             switchToScreen,
 
             isShowMainMenuTitle,
-            isShowFooterTitle
+            isShowFooterTitle,
+            isShowConsoleTitle,
         }
     },
     template: `
     <div class="home">
-<!--        <div class="preview-list">
+        <div class="preview-list">
             <div class="preview-list-item"
                     @click="changeTheme(item)"
                     v-for="(item, index) in themeList" :key="index">
@@ -105,7 +107,7 @@ export default {
                 </div>
                 <div class="preview-title">{{item.title}}</div>
             </div>
-        </div>-->
+        </div>
         
         <div class="preview-container">
             <div class="screen-wrapper">
@@ -113,6 +115,7 @@ export default {
                     :themeName="currentThemeName" 
                     :isShowTitle="isShowMainMenuTitle"
                     :isShowFooterTitle="isShowFooterTitle"
+                    :isShowConsoleTitle="isShowConsoleTitle"
                 />
             </div>
             
@@ -128,6 +131,12 @@ export default {
                         <label for="showFooterTitle">
                             <input id="showFooterTitle" type="checkbox" v-model="isShowFooterTitle"/>
                             Footer Title
+                        </label>
+                    </div>
+                    <div class="form-item">
+                        <label for="showConsoleTitle">
+                            <input id="showConsoleTitle" type="checkbox" v-model="isShowConsoleTitle"/>
+                            Console Title
                         </label>
                     </div>
                 </div>

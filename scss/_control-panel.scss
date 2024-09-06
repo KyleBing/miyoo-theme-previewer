@@ -11,12 +11,16 @@
   justify-content: flex-start;
   flex-flow: row wrap;
   padding: 10px;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid transparentize(white, 0.7);
   .form-item{
     @extend .btn-like;
     @extend .unselectable;
     margin-right: 20px;
     color: white;
+    input, label{
+      color: $text-subtitle;
+      cursor: pointer;
+    }
   }
 }
 

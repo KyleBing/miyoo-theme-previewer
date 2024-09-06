@@ -210,6 +210,7 @@ img.line-h {
   width: 48px;
 }
 .footer .btn-list .btn-list-item .btn-title {
+  margin-left: 10px;
   color: white;
   font-size: 26px;
   line-height: 54px;
@@ -299,7 +300,7 @@ img.line-h {
   width: 156px;
   letter-spacing: 0.5px;
   position: absolute;
-  top: 180px;
+  top: 177px;
   text-align: center;
 }
 .main-menu-list .main-menu-list-item .img-wrapper {
@@ -445,7 +446,7 @@ img.line-h {
   justify-content: center;
 }
 .game-console-list .game-console-list-item .title {
-  bottom: 20px;
+  bottom: 23px;
   position: absolute;
   z-index: 10;
   font-size: 26px;
@@ -512,11 +513,15 @@ img.line-h {
   justify-content: flex-start;
   flex-flow: row wrap;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .form-container .form-item {
   margin-right: 20px;
   color: white;
+}
+.form-container .form-item input, .form-container .form-item label {
+  color: #999;
+  cursor: pointer;
 }
 
 .screen-switcher .screen-list {

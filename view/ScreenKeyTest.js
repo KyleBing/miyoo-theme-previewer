@@ -8,6 +8,7 @@ export default {
             type: String,
             default: 'Cosy by KyleBing'
         },
+        isShowFooterTitle: true
     },
     components: {
         PartHeader,
@@ -21,13 +22,11 @@ export default {
             keymap: `../${props.themeName}/skin/bg-keysetting.png`,
             keytest: `../${props.themeName}/skin/bg-io-testing.png`,
             keymap_key_bg: `../${props.themeName}/skin/bg-keysetting-f.png`,
-
-            props
         }
     },
     template: `
         <div class="screen screen-keymap">
-            <PartHeader title="Key test" :themeName="props.themeName"/>
+            <PartHeader title="Key test" :themeName="themeName"/>
             
             <img class="background" :src="background" alt="bg"/>
             <img class="keymap" :src="keytest" alt="keymap"/>

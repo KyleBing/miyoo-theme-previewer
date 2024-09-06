@@ -19,6 +19,10 @@ export default {
             type: Boolean,
             default: true
         },
+        isShowConsoleTitle: {
+            type: Boolean,
+            default: true
+        },
     },
     components: {
         PartHeader,
@@ -52,24 +56,24 @@ export default {
             currentApp,
             currentAppIndex,
             listItemClicked,
-            props
         }
     },
     template: `
         <div class="screen screen-game-console-list">
-            <PartHeader title="Consoles" :themeName="props.themeName"/>
+            <PartHeader title="Consoles" :themeName="themeName"/>
             <img class="background" :src="background" alt="bg"/>
             
             <div class="game-console-list-wrapper">
                 <div class="game-console-list">
                     <GameConsoleItem
-                        :themeName="props.themeName"
+                        :themeName="themeName"
                         @click="listItemClicked(item.name, index)"
                         v-for="(item, index) in appList" :key="item.name"
                         :icon="item.icon"
                         :iconSelected="item.iconSelected"
                         :title="item.name"
                         :isSelected="currentAppIndex === index"
+                        :isShowConsoleTitle="isShowConsoleTitle"
                     />
                 </div>
             </div>
