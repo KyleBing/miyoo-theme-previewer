@@ -1,4 +1,5 @@
 export default [
+    "SPRUCE",
     "2021 Stock by Miyoo",
     "2022 Stock by Miyoo",
     "2CleanMini by Sheezie",

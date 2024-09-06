@@ -9,6 +9,14 @@ export default {
             type: String,
             default: 'Cosy by KyleBing'
         },
+        isShowTitle: {
+            type: Boolean,
+            default: true
+        },
+        isShowFooterTitle: {
+            type: Boolean,
+            default: true
+        },
     },
     components: {
         PartHeader,
@@ -16,7 +24,7 @@ export default {
     },
     setup(props) {
 
-        const ic_recent_n    = `../${props.themeName}/skin/ic-recent-n.png`
+        const ic_recent_n    = ref(`../${props.themeName}/skin/ic-recent-n.png`)
         const ic_recent_f    = `../${props.themeName}/skin/ic-recent-f.png`
         const ic_retroarch_n = `../${props.themeName}/skin/ic-retroarch-n.png`
         const ic_retroarch_f = `../${props.themeName}/skin/ic-retroarch-f.png`
@@ -29,11 +37,11 @@ export default {
         const ic_setting_n   = `../${props.themeName}/skin/ic-setting-n.png`
         const ic_setting_f   = `../${props.themeName}/skin/ic-setting-f.png`
 
-        const dot_n = `../${props.themeName}/skin/dot-n.png`
-        const dot_a = `../${props.themeName}/skin/dot-a.png`
+        const dot_n = ref(`../${props.themeName}/skin/dot-n.png`)
+        const dot_a = ref(`../${props.themeName}/skin/dot-a.png`)
 
         const mainMenuList = [
-            {name: 'Recent'   , f: ic_recent_f    , n: ic_recent_n}    ,
+            {name: 'Recent'   , f: ic_recent_f    , n: ic_recent_n.value}    ,
             {name: 'Favorite' , f: ic_favorite_f  , n: ic_favorite_n}  ,
             {name: 'Games'    , f: ic_game_f      , n: ic_game_n}      ,
             {name: 'Expert'   , f: ic_retroarch_f , n: ic_retroarch_n} ,
@@ -64,13 +72,11 @@ export default {
             currentMenu,
             currentMenuIndex,
             listItemClicked,
-
-            props
         }
     },
     template: `
         <div class="screen screen-home">
-            <PartHeader :isShowLogo="true" :themeName="props.themeName"/>
+            <PartHeader :isShowLogo="true" :themeName="themeName"/>
             
             <img class="background" :src="background" alt="bg"/>
             
@@ -79,7 +85,7 @@ export default {
                     @click="listItemClicked(item.name, menuIndex)"
                     v-for="(item, menuIndex) in mainMenuList" :key="menuIndex"
                 >
-                    <div class="menu-title">{{item.name}}</div>
+                    <div v-if="isShowTitle" class="menu-title">{{item.name}}</div>
                     <div class="img-wrapper">
                         <img v-show="currentMenu === item.name" :src="item.f" :alt="item.name">
                         <img v-show="currentMenu !== item.name" :src="item.n" :alt="item.name">
@@ -94,7 +100,7 @@ export default {
                 </div>
             </div>
             
-            <PartFooter :themeName="props.themeName"/>
+            <PartFooter :isShowFooterTitle="isShowFooterTitle" :themeName="themeName"/>
             
         </div>
 `

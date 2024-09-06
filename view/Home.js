@@ -1,4 +1,4 @@
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import theme_list from "./CONST_THEME_LIST.js";
 import ScreenHome from "./ScreenHome.js";
 import ScreenAppList from "./ScreenAppList.js";
@@ -17,9 +17,12 @@ export default {
         ScreenKeyTest
     },
     setup() {
+
+        /**
+         * THEME CHANGE
+         */
         const themeList = ref([])
         onMounted(()=> {
-
             // generate theme list data
             themeList.value = theme_list.map(item => {
                 if (item.indexOf(' by ') > 0) {
@@ -27,17 +30,31 @@ export default {
                     return {
                         title: temparray[0],
                         img: `../${item}/preview.png`,
-                        author: temparray[1]
+                        author: temparray[1],
+                        originFolderName: item
                     }
                 } else {
                     return {
                         title: item,
                         img: `../${item}/preview.png`,
-                        author: ''
+                        author: '',
+                        originFolderName: item
                     }
                 }
             })
         })
+        const currentThemeName = ref('Cosy by KyleBing')
+        function changeTheme(theme){
+            currentThemeName.value = theme.originFolderName
+            currentScreen.value = 'ScreenAppList'
+            nextTick(()=>{
+                currentScreen.value = 'ScreenHome'
+            })
+        }
+
+        /**
+         * SCREEN CHANGE
+         */
         const screenList = [
             'ScreenHome',
             'ScreenAppList',
@@ -46,38 +63,50 @@ export default {
             'ScreenKeyMap',
             'ScreenKeyTest',
         ]
-
         const currentScreen = ref('ScreenHome')
-
         function switchToScreen(screenName){
             currentScreen.value = screenName
         }
 
+        const isShowTitle = ref(false) // show title
+        const isShowFooterTitle = ref(false) // show title
+
         return {
             themeList,
             model: 'a30',  // mini a30
-            themeName: 'Cosy by KyleBing',
-            // themeName: 'SPRUCE',
+            currentThemeName,
+
             screenList,
             currentScreen,
 
-            switchToScreen
+            // Methods
+            changeTheme,
+            switchToScreen,
+
+            isShowTitle,
+            isShowFooterTitle
         }
     },
     template: `
     <div class="home">
-<!--        <div class="preview-list">-->
-<!--            <div class="preview-list-item" v-for="(item, index) in themeList" :key="index">-->
-<!--                <div class="preview-img-wrapper">-->
-<!--                    <img :src="item.img" :alt="item.title">-->
-<!--                </div>-->
-<!--                <div class="preview-title">{{item.title}}</div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="preview-list">
+            <div class="preview-list-item"
+                    @click="changeTheme(item)"
+                    v-for="(item, index) in themeList" :key="index">
+                <div class="preview-img-wrapper">
+                    <img :src="item.img" :alt="item.title">
+                </div>
+                <div class="preview-title">{{item.title}}</div>
+            </div>
+        </div>
         
         <div class="preview-container">
             <div class="screen-wrapper">
-                <component :is="currentScreen" :themeName="themeName"/>
+                <component :is="currentScreen" 
+                    :themeName="currentThemeName" 
+                    :isShowTitle="isShowTitle"
+                    :isShowFooterTitle="isShowFooterTitle"
+                />
             </div>
             
             <div class="screen-switcher">

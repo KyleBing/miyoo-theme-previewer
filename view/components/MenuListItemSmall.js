@@ -1,3 +1,5 @@
+import {onImgError} from "../util.js";
+
 export default {
     props: {
         icon: {
@@ -35,20 +37,20 @@ export default {
             bg_list_s: `../${props.themeName}/skin/bg-list-s.png`,
             switch_off: `../${props.themeName}/skin/extra/toggle-off.png`,
             switch_on: `../${props.themeName}/skin/extra/toggle-on.png`,
-            props
+            onImgError,
         }
     },
     template: `
 <div :class="['menu-list-item-small', {active: isSelected}]">
     <div class="icon">
-        <img :src="props.icon" alt="icon">
+        <img :src="icon" alt="icon" @error="onImgError">
     </div>
     
     <div class="content">
-        <div class="title">{{props.title}}</div>
-        <div class="switch" v-if="props.isShowSwitch">
-            <img v-show="props.isSwitchOn" :src="switch_on" alt="switch on">
-            <img v-show="!props.isSwitchOn" :src="switch_off" alt="switch off">
+        <div class="title">{{title}}</div>
+        <div class="switch" v-if="isShowSwitch">
+            <img v-show="isSwitchOn" :src="switch_on" alt="switch on" @error="onImgError"/>
+            <img v-show="!isSwitchOn" :src="switch_off" alt="switch off" @error="onImgError"/>
         </div>
     </div>
     

@@ -32,7 +32,7 @@ export default {
             <img class="background" :src="background" alt="bg"/>
             <img class="keymap" :src="keytest" alt="keymap"/>
             
-            <PartFooter :themeName="props.themeName"/>
+            <PartFooter :isShowFooterTitle="isShowFooterTitle" :themeName="themeName"/>
             
         </div>
 `

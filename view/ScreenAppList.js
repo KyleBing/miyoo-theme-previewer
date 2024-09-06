@@ -10,6 +10,14 @@ export default {
             type: String,
             default: 'Cosy by KyleBing'
         },
+        isShowTitle: {
+            type: Boolean,
+            default: true
+        },
+        isShowFooterTitle: {
+            type: Boolean,
+            default: true
+        },
     },
     components: {
         PartHeader,
@@ -87,7 +95,7 @@ export default {
                 />
             </div>
             
-            <PartFooter :themeName="props.themeName"/>
+            <PartFooter :isShowFooterTitle="isShowFooterTitle" :themeName="themeName"/>
             
         </div>
 `

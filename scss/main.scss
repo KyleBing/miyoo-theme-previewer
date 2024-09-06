@@ -18,9 +18,9 @@ img.line-h{
     position: relative;
     width: $width;
     height: $height;
-
     img.background{
         width: $width;
+        height: $height;
         position: absolute;
         top: 0;
         left: 0;

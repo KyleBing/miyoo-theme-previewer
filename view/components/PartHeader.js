@@ -1,3 +1,5 @@
+import {onImgError} from "../util.js";
+
 export default {
     props: {
         batteryLevel: { // 1-5
@@ -46,8 +48,6 @@ export default {
 
         const logo = `../${props.themeName}/skin/miyoo-topbar.png`
 
-        console.log(props)
-
         return {
             logo,
             bg_title: `../${props.themeName}/skin/bg-title.png`,
@@ -69,18 +69,18 @@ export default {
             ],
 
             volumeArray,
-            props
+            onImgError
         }
     },
     template: `
 <div class="header">
     <div class="icon-list">
-        <div class="icon-list-item"> <img :src="volumeArray[props.volumeLevel]" alt="volume"> </div>
-        <div class="icon-list-item"> <img :src="wifiArray[props.wifiLevel]" alt="wifi"> </div>
-        <div class="icon-list-item"> <img :src="batteryArray[props.batteryLevel]" alt="battery"> </div>
+        <div class="icon-list-item"> <img :src="volumeArray[volumeLevel]" alt="volume" @error="onImgError"> </div>
+        <div class="icon-list-item"> <img :src="wifiArray[wifiLevel]"  alt="wifi" @error="onImgError"> </div>
+        <div class="icon-list-item"> <img :src="batteryArray[batteryLevel]" alt="battery"> </div>
     </div>
     <div class="title" v-if="title">{{title}}</div>
-    <div class="logo" v-if="isShowLogo"><img :src="logo" alt="logo"></div>
+    <div class="logo" v-if="isShowLogo"><img :src="logo" alt="logo" ></div>
     <img class="bg-title" :src="bg_title" alt="bg">
     <img class="line-h" :src="line_h" alt="line-h"/>
 </div>

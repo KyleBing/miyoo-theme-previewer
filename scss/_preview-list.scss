@@ -8,6 +8,7 @@
         display: flex;
         justify-content: center;
         flex-flow: column nowrap;
+        @extend .btn-like;
         .preview-img-wrapper{
             background-color: white;
             @include box-shadow(1px 1px 5px transparentize(black, 0.8));

@@ -6,6 +6,10 @@ export default {
             type: String,
             default: 'Cosy by KyleBing'
         },
+        isShowFooterTitle: {
+            type: Boolean,
+            default: true
+        },
     },
     setup(props) {
         const currentMenu = ref('Recent')
@@ -29,11 +33,11 @@ export default {
             <div class="btn-list">
                 <div class="btn-list-item">
                     <img class="icon" :src="btn_a" alt="A">
-                    <div class="btn-title">SELECT</div>
+                    <div v-if="isShowFooterTitle" class="btn-title">SELECT</div>
                 </div>
                 <div class="btn-list-item">
                     <img class="icon" :src="btn_b" alt="B">
-                    <div class="btn-title">BACK</div>
+                    <div v-if="isShowFooterTitle" class="btn-title">BACK</div>
                 </div>
             </div>
         </div>
