@@ -35,8 +35,8 @@ export default {
         const appList = consoleList.map(item => {
             return {
                 name: item.toUpperCase(),
-                icon: `../${props.themeName}/icons/${item}.png`,
-                iconSelected: `../${props.themeName}/icons/sel/${item}.png`
+                icon: `${props.themeName}/icons/${item}.png`,
+                iconSelected: `${props.themeName}/icons/sel/${item}.png`
             }
         })
 
@@ -50,8 +50,8 @@ export default {
         }
 
         return {
-            background: `../${props.themeName}/skin/background.png`,
-            line_h: `../${props.themeName}/skin/div-line-h.png`,
+            background: `${props.themeName}/skin/background.png`,
+            line_h: `${props.themeName}/skin/div-line-h.png`,
             appList,
             currentApp,
             currentAppIndex,

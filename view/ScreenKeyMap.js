@@ -25,11 +25,11 @@ export default {
     },
     setup(props) {
         return {
-            background: `../${props.themeName}/skin/background.png`,
-            line_h: `../${props.themeName}/skin/div-line-h.png`,
-            keymap: `../${props.themeName}/skin/bg-keysetting.png`,
-            keytest: `../${props.themeName}/skin/bg-io-testing.png`,
-            keymap_key_bg: `../${props.themeName}/skin/bg-keysetting-f.png`,
+            background: `${props.themeName}/skin/background.png`,
+            line_h: `${props.themeName}/skin/div-line-h.png`,
+            keymap: `${props.themeName}/skin/bg-keysetting.png`,
+            keytest: `${props.themeName}/skin/bg-io-testing.png`,
+            keymap_key_bg: `${props.themeName}/skin/bg-keysetting-f.png`,
             onImgError
         }
     },

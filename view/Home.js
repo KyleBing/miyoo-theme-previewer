@@ -21,7 +21,7 @@ export default {
         /**
          * THEME CHANGE
          */
-        const currentThemeName = ref('Cosy by KyleBing')
+        const currentThemeName = ref('../themes/Cosy by KyleBing')
         // const currentThemeName = ref('SPRUCE')
         function changeTheme(theme){
             currentThemeName.value = theme.originFolderName
@@ -37,22 +37,22 @@ export default {
         onMounted(()=> {
             // generate theme list data
             themeListOrigin.value = theme_list.map(item => {
+                let finalPath = item.substring('../themes/'.length)
                 if (item.indexOf(' by ') > 0) {
-                    let finalPath = item
-                    if (item.indexOf('/') > -1){
-                        finalPath = item.substring(0, item.indexOf('/'))
+                    if (finalPath.indexOf('/') > -1){
+                        finalPath = finalPath.substring(0, finalPath.indexOf('/'))
                     }
                     let temparray = finalPath.split(' by ')
                     return {
                         title: temparray[0],
-                        img: `../${item}/preview.png`,
+                        img: `${item}/preview.png`,
                         author: temparray[1],
                         originFolderName: item
                     }
                 } else {
                     return {
-                        title: item,
-                        img: `../${item}/preview.png`,
+                        title: finalPath,
+                        img: `${item}/preview.png`,
                         author: 'Unknown',
                         originFolderName: item
                     }

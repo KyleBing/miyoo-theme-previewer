@@ -33,10 +33,10 @@ export default {
     },
     setup(props) {
         return {
-            line_h: `../${props.themeName}/skin/div-line-h.png`,
-            bg_list_s: `../${props.themeName}/skin/bg-list-s.png`,
-            switch_off: `../${props.themeName}/skin/extra/toggle-off.png`,
-            switch_on: `../${props.themeName}/skin/extra/toggle-on.png`,
+            line_h: `${props.themeName}/skin/div-line-h.png`,
+            bg_list_s: `${props.themeName}/skin/bg-list-s.png`,
+            switch_off: `${props.themeName}/skin/extra/toggle-off.png`,
+            switch_on: `${props.themeName}/skin/extra/toggle-on.png`,
             onImgError,
         }
     },

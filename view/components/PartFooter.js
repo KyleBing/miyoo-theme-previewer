@@ -21,10 +21,10 @@ export default {
         }
 
         return {
-            tips_bar_bg: `../${props.themeName}/skin/tips-bar-bg.png`,
-            btn_a: `../${props.themeName}/skin/icon-A-54.png`,
-            btn_b: `../${props.themeName}/skin/icon-B-54.png`,
-            line_h: `../${props.themeName}/skin/div-line-h.png`,
+            tips_bar_bg: `${props.themeName}/skin/tips-bar-bg.png`,
+            btn_a: `${props.themeName}/skin/icon-A-54.png`,
+            btn_b: `${props.themeName}/skin/icon-B-54.png`,
+            line_h: `${props.themeName}/skin/div-line-h.png`,
         }
     },
     template: `

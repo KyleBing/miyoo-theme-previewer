@@ -24,21 +24,21 @@ export default {
     },
     setup(props) {
 
-        const ic_recent_n    = ref(`../${props.themeName}/skin/ic-recent-n.png`)
-        const ic_recent_f    = `../${props.themeName}/skin/ic-recent-f.png`
-        const ic_retroarch_n = `../${props.themeName}/skin/ic-retroarch-n.png`
-        const ic_retroarch_f = `../${props.themeName}/skin/ic-retroarch-f.png`
-        const ic_app_n       = `../${props.themeName}/skin/ic-app-n.png`
-        const ic_app_f       = `../${props.themeName}/skin/ic-app-f.png`
-        const ic_favorite_n  = `../${props.themeName}/skin/ic-favorite-n.png`
-        const ic_favorite_f  = `../${props.themeName}/skin/ic-favorite-f.png`
-        const ic_game_n      = `../${props.themeName}/skin/ic-game-n.png`
-        const ic_game_f      = `../${props.themeName}/skin/ic-game-f.png`
-        const ic_setting_n   = `../${props.themeName}/skin/ic-setting-n.png`
-        const ic_setting_f   = `../${props.themeName}/skin/ic-setting-f.png`
+        const ic_recent_n    = ref(`${props.themeName}/skin/ic-recent-n.png`)
+        const ic_recent_f    = `${props.themeName}/skin/ic-recent-f.png`
+        const ic_retroarch_n = `${props.themeName}/skin/ic-retroarch-n.png`
+        const ic_retroarch_f = `${props.themeName}/skin/ic-retroarch-f.png`
+        const ic_app_n       = `${props.themeName}/skin/ic-app-n.png`
+        const ic_app_f       = `${props.themeName}/skin/ic-app-f.png`
+        const ic_favorite_n  = `${props.themeName}/skin/ic-favorite-n.png`
+        const ic_favorite_f  = `${props.themeName}/skin/ic-favorite-f.png`
+        const ic_game_n      = `${props.themeName}/skin/ic-game-n.png`
+        const ic_game_f      = `${props.themeName}/skin/ic-game-f.png`
+        const ic_setting_n   = `${props.themeName}/skin/ic-setting-n.png`
+        const ic_setting_f   = `${props.themeName}/skin/ic-setting-f.png`
 
-        const dot_n = ref(`../${props.themeName}/skin/dot-n.png`)
-        const dot_a = ref(`../${props.themeName}/skin/dot-a.png`)
+        const dot_n = ref(`${props.themeName}/skin/dot-n.png`)
+        const dot_a = ref(`${props.themeName}/skin/dot-a.png`)
 
         const mainMenuList = [
             {name: 'Recent'   , f: ic_recent_f    , n: ic_recent_n.value}    ,
@@ -59,11 +59,11 @@ export default {
         }
 
         return {
-            background: `../${props.themeName}/skin/background.png`   ,
-            tips_bar_bg: `../${props.themeName}/skin/tips-bar-bg.png` ,
-            btn_a: `../${props.themeName}/skin/icon-A-54.png`         ,
-            btn_b: `../${props.themeName}/skin/icon-B-54.png`         ,
-            line_h: `../${props.themeName}/skin/div-line-h.png`       ,
+            background: `${props.themeName}/skin/background.png`   ,
+            tips_bar_bg: `${props.themeName}/skin/tips-bar-bg.png` ,
+            btn_a: `${props.themeName}/skin/icon-A-54.png`         ,
+            btn_b: `${props.themeName}/skin/icon-B-54.png`         ,
+            line_h: `${props.themeName}/skin/div-line-h.png`       ,
 
             dot_n,
             dot_a,

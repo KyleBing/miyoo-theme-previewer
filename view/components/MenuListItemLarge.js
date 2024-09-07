@@ -25,8 +25,8 @@ export default {
     },
     setup(props) {
         return {
-            line_h: `../${props.themeName}/skin/div-line-h.png`,
-            bg_list_l: `../${props.themeName}/skin/bg-list-l.png`,
+            line_h: `${props.themeName}/skin/div-line-h.png`,
+            bg_list_l: `${props.themeName}/skin/bg-list-l.png`,
             onImgError
         }
     },
