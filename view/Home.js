@@ -54,6 +54,11 @@ export default {
             })
         })
 
+        function onPreviewError(event){
+            event.target.src = `./img/no_preview.png`
+            event.target.removeEventListener('error', onPreviewError);
+        }
+
 
         /**
          * SCREEN CHANGE
@@ -84,12 +89,12 @@ export default {
             screenList,
             model: 'a30',  // mini a30
             currentThemeName,
-
             currentScreen,
 
             // Methods
             changeTheme,
             switchToScreen,
+            onPreviewError,
 
             isShowMainMenuTitle,
             isShowFooterTitle,
@@ -98,18 +103,21 @@ export default {
     },
     template: `
     <div class="home">
+    
+        <!-- Theme List   -->
         <div class="preview-list">
-            <div class="preview-list-item"
+            <div :class="['preview-list-item', {active: item.originFolderName === currentThemeName}]"
                     @click="changeTheme(item)"
                     v-for="(item, index) in themeList" :key="index">
                 <div class="preview-img-wrapper">
-                    <img :src="item.img" :alt="item.title">
+                    <img :src="item.img" :alt="item.title" @error="onPreviewError">
                 </div>
                 <div class="preview-title">{{item.title}}</div>
             </div>
         </div>
         
         <div class="preview-container">
+            <!-- Previewer   -->
             <div class="screen-wrapper">
                 <component :is="currentScreen" 
                     :themeName="currentThemeName" 
@@ -119,6 +127,7 @@ export default {
                 />
             </div>
             
+            <!-- Control Panel  -->
             <div class="control-panel">
                 <div class="form-container">
                     <div class="form-item">

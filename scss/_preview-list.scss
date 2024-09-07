@@ -9,7 +9,17 @@
         justify-content: center;
         flex-flow: column nowrap;
         @extend .btn-like;
+        &.active{
+            .preview-img-wrapper{
+                background: magenta;
+                border: 1px solid magenta;
+                @include box-shadow(20px 20px 35px transparentize(black, 0.5));
+                @include transform(translateY(-10px));
+                @include transition(all 0.3s);
+            }
+        }
         .preview-img-wrapper{
+            @include transition(all 0.3s);
             background-color: white;
             @include box-shadow(1px 1px 5px transparentize(black, 0.8));
             display: block;
