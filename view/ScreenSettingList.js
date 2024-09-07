@@ -36,7 +36,7 @@ export default {
             {name: 'BGM Volume' ,               os: 'onion', isShowSwitch: true ,  isSwitchOn: false , icon: `${props.themeName}/skin/sound-icon.png` ,              } ,
             {name: 'Sleep Timer' ,              os: 'onion', isShowSwitch: false , isSwitchOn: false , icon: `${props.themeName}/skin/icon-device-info-48.png` ,     } ,
             {name: 'Factory Reset' ,            os: 'onion', isShowSwitch: false , isSwitchOn: false , icon: `${props.themeName}/skin/icon-factory-reset-48.png` ,   } ,
-            {name: 'Device info - spruce 2.1' , os: 'onion', isShowSwitch: false , isSwitchOn: false , icon: `${props.themeName}/skin/icon-device-info-48.png` ,     } ,
+            {name: 'Device info' ,              os: 'onion', isShowSwitch: false , isSwitchOn: false , icon: `${props.themeName}/skin/icon-device-info-48.png` ,     } ,
             {name: 'Hardware Test' ,            os: 'onion', isShowSwitch: false , isSwitchOn: false , icon: `${props.themeName}/skin/icon-device-info-48.png` ,     } ,
             {name: 'Fixes' ,                    os: 'onion', isShowSwitch: false , isSwitchOn: false , icon: `${props.themeName}/skin/fixit.png` ,                   } ,
 
