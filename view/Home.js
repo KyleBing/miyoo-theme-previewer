@@ -16,13 +16,7 @@ export default {
         ScreenKeyMap,
         ScreenKeyTest,
     },
-    onMounted(){
-        window.addEventListener('resize', ()=>{
-            this.heightWindow = innerHeight
-        })
-    },
     setup() {
-        const heightWindow = ref(innerHeight)
 
         /**
          * THEME CHANGE
@@ -68,7 +62,6 @@ export default {
             event.target.removeEventListener('error', onPreviewError);
         }
 
-
         /**
          * SCREEN CHANGE
          */
@@ -100,7 +93,6 @@ export default {
             model: 'a30',  // mini a30
             currentThemeName,
             currentScreen,
-
             keyword,
 
             // Methods
@@ -115,9 +107,7 @@ export default {
         }
     },
     computed: {
-        heightContentStyle(){
-            return `height: ${this.heightWindow}px`
-        }
+
     },
     watch: {
         keyword(newValue){

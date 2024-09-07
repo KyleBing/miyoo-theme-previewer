@@ -4,7 +4,7 @@
     z-index: $z-index-header;
     position: relative;
     img.bg-title{
-        width: $width;
+        max-width: $width;
         max-height: $height;
         position: absolute;
         top: 0;

@@ -86,13 +86,17 @@ tt {
   transform: translateY(2px);
 }
 
+body {
+  background-color: gray;
+}
+
 img {
   display: block;
 }
 
 img.line-h {
   bottom: -2px;
-  width: 640px;
+  max-width: 640px;
   position: absolute;
   z-index: 10;
 }
@@ -111,7 +115,6 @@ img.line-h {
 }
 
 .home {
-  background-color: gray;
   position: relative;
   justify-content: space-between;
 }
@@ -143,7 +146,7 @@ img.line-h {
   position: relative;
 }
 .header img.bg-title {
-  width: 640px;
+  max-width: 640px;
   max-height: 480px;
   position: absolute;
   top: 0;
@@ -251,6 +254,7 @@ img.line-h {
 }
 
 .preview-list {
+  z-index: 200;
   flex-grow: 1;
   display: flex;
   justify-content: flex-start;
@@ -286,7 +290,7 @@ img.line-h {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  text-shadow: 10px 10px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4);
   color: white;
 }
 .preview-list .preview-list-item .preview-img-wrapper {

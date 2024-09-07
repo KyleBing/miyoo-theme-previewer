@@ -2,6 +2,9 @@
 @import "reset";
 @import "utility";
 
+body{
+    background-color: gray;
+}
 
 img{
     display: block;
@@ -9,7 +12,7 @@ img{
 
 img.line-h{
     bottom: -2px;
-    width: $width;
+    max-width: $width;
     position: absolute;
     z-index: 10;
 }
