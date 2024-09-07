@@ -1,4 +1,7 @@
 .search-bar{
+    position: sticky;
+    top: 0;
+    z-index: $z-index-header;
     padding: 20px;
     input{
         width: 50%;
@@ -12,7 +15,7 @@
         font-family: Galvji, sans-serif;
         font-weight: bold;
         font-size: 30px;
-        background-color: transparentize(black, 0.3);
+        background-color: black;
         outline: 0px solid transparentize(black, 0.5);
         @include transition(all 0.3s);
         &:focus{
