@@ -3,11 +3,10 @@
 
     img.keymap{
         z-index: 10;
-        position: absolute;
         top: 0;
-        left: 0;
+        position: absolute;
         width: $width;
-        height: $height;
+        //height: $height;
     }
 
     .keymap-key{

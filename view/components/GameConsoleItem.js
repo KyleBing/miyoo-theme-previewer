@@ -26,8 +26,8 @@ export default {
         <img v-show="!isSelected" :src="icon" alt="console icon" @error="onImgError">
     </div>
     <div v-if="isShowConsoleTitle" class="title">{{title}}</div>
-    <img v-show="isSelected" :src="bg_game_item_f" alt="bg-selected" class="bg">
-    <img v-show="!isSelected" :src="bg_game_item_n" alt="bg-selected" class="bg">
+    <img v-show="isSelected" :src="bg_game_item_f" alt="bg-selected" class="bg" @error="onImgError">
+    <img v-show="!isSelected" :src="bg_game_item_n" alt="bg-selected" class="bg" @error="onImgError">
 </div>
 `,
 }

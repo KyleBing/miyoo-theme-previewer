@@ -127,6 +127,7 @@ img.line-h {
   width: 660px;
 }
 .home .screen-wrapper {
+  overflow: hidden;
   flex-shrink: 0;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -415,6 +416,7 @@ img.line-h {
   height: 360px;
   overflow-y: auto;
   left: 0;
+  z-index: 100;
   position: absolute;
 }
 
@@ -464,11 +466,9 @@ img.line-h {
 }
 .screen-keymap img.keymap {
   z-index: 10;
-  position: absolute;
   top: 0;
-  left: 0;
+  position: absolute;
   width: 640px;
-  height: 480px;
 }
 .screen-keymap .keymap-key {
   z-index: 999;

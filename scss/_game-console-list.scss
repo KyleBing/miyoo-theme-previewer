@@ -3,6 +3,7 @@
   height: $height - $height-header - $height-footer;
   overflow-y: auto;
   left: 0;
+  z-index: $z-index-console-list;
   position: absolute;
 }
 .game-console-list{
