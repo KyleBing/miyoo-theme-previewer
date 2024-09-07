@@ -38,7 +38,11 @@ export default {
             // generate theme list data
             themeListOrigin.value = theme_list.map(item => {
                 if (item.indexOf(' by ') > 0) {
-                    let temparray = item.split(' by ')
+                    let finalPath = item
+                    if (item.indexOf('/') > -1){
+                        finalPath = item.substring(0, item.indexOf('/'))
+                    }
+                    let temparray = finalPath.split(' by ')
                     return {
                         title: temparray[0],
                         img: `../${item}/preview.png`,
