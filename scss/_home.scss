@@ -1,11 +1,9 @@
 .home{
   background-color: gray;
   position: relative;
-  display: flex;
   justify-content: space-between;
-  .preview-list{
-    padding-right: $width + 20px;
-    flex-grow: 1;
+  .container{
+    padding-right: $width + 60px;
   }
 
   .preview-container{

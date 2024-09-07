@@ -16,7 +16,13 @@ export default {
         ScreenKeyMap,
         ScreenKeyTest,
     },
+    onMounted(){
+        window.addEventListener('resize', ()=>{
+            this.heightWindow = innerHeight
+        })
+    },
     setup() {
+        const heightWindow = ref(innerHeight)
 
         /**
          * THEME CHANGE
@@ -31,10 +37,12 @@ export default {
             })
         }
 
+        const keyword = ref('')  // Filter Keyword
         const themeList = ref([])
+        const themeListOrigin = ref([])
         onMounted(()=> {
             // generate theme list data
-            themeList.value = theme_list.map(item => {
+            themeListOrigin.value = theme_list.map(item => {
                 if (item.indexOf(' by ') > 0) {
                     let temparray = item.split(' by ')
                     return {
@@ -47,11 +55,12 @@ export default {
                     return {
                         title: item,
                         img: `../${item}/preview.png`,
-                        author: '',
+                        author: 'Unknown',
                         originFolderName: item
                     }
                 }
             })
+            themeList.value = [].concat(...themeListOrigin.value)
         })
 
         function onPreviewError(event){
@@ -86,10 +95,13 @@ export default {
 
         return {
             themeList,
+            themeListOrigin,
             screenList,
             model: 'a30',  // mini a30
             currentThemeName,
             currentScreen,
+
+            keyword,
 
             // Methods
             changeTheme,
@@ -99,20 +111,40 @@ export default {
             isShowMainMenuTitle,
             isShowFooterTitle,
             isShowConsoleTitle,
+
+        }
+    },
+    computed: {
+        heightContentStyle(){
+            return `height: ${this.heightWindow}px`
+        }
+    },
+    watch: {
+        keyword(newValue){
+            this.themeList = this.themeListOrigin.filter(item => item.originFolderName.toLocaleLowerCase().indexOf(newValue.toLocaleLowerCase()) > -1)
         }
     },
     template: `
     <div class="home">
-    
-        <!-- Theme List   -->
-        <div class="preview-list">
-            <div :class="['preview-list-item', {active: item.originFolderName === currentThemeName}]"
-                    @click="changeTheme(item)"
-                    v-for="(item, index) in themeList" :key="index">
-                <div class="preview-img-wrapper">
-                    <img :src="item.img" :alt="item.title" @error="onPreviewError">
+        <div class="container" :style="heightContentStyle">
+            <!-- Search bar   -->
+            <div class="search-bar">
+                <input type="text" v-model="keyword">
+            </div>
+        
+            <!-- Theme List   -->
+            <div class="preview-list">
+                <div :class="['preview-list-item', {active: item.originFolderName === currentThemeName}]"
+                        @click="changeTheme(item)"
+                        v-for="(item, index) in themeList" :key="index">
+                    <div class="preview-img-wrapper">
+                        <img :src="item.img" :alt="item.title" @error="onPreviewError">
+                    </div>
+                    <div class="preview-title-wrapper">
+                        <div class="title">{{item.title}}</div>
+                        <div class="author">{{item.author}}</div>
+                    </div>
                 </div>
-                <div class="preview-title">{{item.title}}</div>
             </div>
         </div>
         

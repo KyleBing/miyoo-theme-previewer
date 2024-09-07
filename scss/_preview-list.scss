@@ -1,4 +1,5 @@
 .preview-list{
+    flex-grow: 1;
     display: flex;
     justify-content: flex-start;
     flex-flow: row wrap;
@@ -11,37 +12,55 @@
         @extend .btn-like;
         &.active{
             .preview-img-wrapper{
-                background: magenta;
-                border: 1px solid magenta;
-                @include box-shadow(20px 20px 35px transparentize(black, 0.5));
+                background: white;
+                border: 1px solid white;
+                @include box-shadow(20px 20px 25px transparentize(black, 0.5), -20px 20px 25px transparentize(black, 0.8));
                 @include transform(translateY(-10px));
                 @include transition(all 0.3s);
+            }
+            .preview-title-wrapper{
+                .title{
+                    @include transition(all 0.3s);
+                    text-shadow: 10px 10px 4px transparentize(black, 0.6);
+                    color: white;
+                }
+                .author{
+                }
             }
         }
         .preview-img-wrapper{
             @include transition(all 0.3s);
-            background-color: white;
+            background-color: black;
             @include box-shadow(1px 1px 5px transparentize(black, 0.8));
             display: block;
             width: 360px;
             padding: 5px;
             @include border-radius(5px);
             overflow: hidden;
-            border: 1px solid $color-border;
+            border: 1px solid black;
             img{
                 display: block;
                 width: 100%;
             }
         }
-        .preview-title{
+        .preview-title-wrapper{
             width: 100%;
             overflow: hidden;
             text-overflow: ellipsis;
             margin-top: 20px;
             text-align: center;
             font-family: 'Galvji', sans-serif;
-            font-size: $fz-subtitle;
-            font-weight: bold;
+            .title{
+                @include transition(all 0.3s);
+                color: $text-title;
+                text-shadow: 2px 2px 1px transparentize(black, 0.6);
+                font-size: $fz-subtitle;
+                font-weight: bold;
+            }
+            .author{
+                color: transparentize(white, 0.3);
+                text-shadow: 1px 1px 1px transparentize(black, 0.6);
+            }
         }
     }
 
