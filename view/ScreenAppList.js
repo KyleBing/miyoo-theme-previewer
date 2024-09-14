@@ -27,7 +27,7 @@ export default {
     setup(props) {
         const appListOnion = [
             {name: 'Search' ,              desc: 'Search game library' ,             icon: `${props.themeName}/icons/App/search.png`} ,
-            {name: 'Package Manager' ,     desc: 'Add or remove systems and apps' ,  icon: `${props.themeName}/icons/App/untitled.png`} ,
+            {name: 'Package Manager' ,     desc: 'Add or remove systems and apps' ,  icon: `${props.themeName}/icons/App/pacman.png`} ,
             {name: 'Activity Tracker' ,    desc: 'Track your play activity' ,        icon: `${props.themeName}/icons/App/activity.png`} ,
             {name: 'RetroArch' ,           desc: 'Advanced emulator settings' ,      icon: `${props.themeName}/icons/App/retroarch.png`} ,
             {name: 'Expert' ,              desc: 'Expert tab shortcut' ,             icon: `${props.themeName}/icons/App/expert.png`} ,
