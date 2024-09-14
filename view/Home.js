@@ -21,7 +21,7 @@ export default {
         /**
          * THEME CHANGE
          */
-        const currentThemeName = ref('../Cosy by KyleBing')
+        const currentThemeName = ref('../themes/Cosy by KyleBing')
         // const currentThemeName = ref('SPRUCE')
         function changeTheme(theme){
             currentThemeName.value = theme.originFolderName
